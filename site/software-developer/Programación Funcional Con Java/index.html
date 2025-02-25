@@ -1,0 +1,6058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../PROYECTOS/">
+      
+      
+        <link rel="next" href="../Software%20Exam%20Certification/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Programación Funcional Con Java - learning hub of the future</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom_htb.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programacion-funcional-con-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="learning hub of the future" class="md-header__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            learning hub of the future
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programación Funcional Con Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="learning hub of the future" class="md-nav__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    learning hub of the future
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PROYECTO%20SIS-414/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTO SIS 414
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON%20CERTIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PYTHON CERTIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Palabras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palabras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../obsidian_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obsidian compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitecto DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/Arquitecto%20DevOps/Arquitecto%20DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/Azure/AZ-400%20Desarrollo%20para%20DevOps%20empresarial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ 400 Desarrollo para DevOps empresarial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/Azure/AZ-400%20EXPLORACION%20DE%20ENLACES%20DE%20GIT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a los enlaces de Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Github actions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Github actions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/github-actions/GitHub%20Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aspectos básicos de la implementación automatizada de aplicaciones con GitHub Actions y GitHub Pages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMARIO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMARIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/github-actions/TEMARIO/Gu%C3%ADa%201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación de un flujo de trabajo con GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/Learn%20AI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ANEXOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            ANEXOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ANEXOS/ai-mastery-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta Definitiva para Dominar la Inteligencia Artificial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ANEXOS/future-learning-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Mejorada: Presente y Futuro de IA y Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ANEXOS/learning-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Integral en Ciencia de Datos, IA y MLOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo de Apps con LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Desarrollo%20de%20Apps%20con%20LLMs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Embeddings%20y%20Bases%20de%20Datos%20Vectoriales%20para%20NLP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embeddings y Bases de Datos Vectoriales para NLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Backend hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Backend hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-hub/Generadores%20en%20JavaScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El poder de function* y yield
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-hub/Graphql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Closures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-hub/closures/Profundizando%20en%20Middlewares%20y%20Closures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profundizando en Middlewares y Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-hub/closures/closures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cisco academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Cisco academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CCNA 2 v7
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            CCNA 2 v7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1" id="__nav_11_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_1" id="__nav_11_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/1%20Configuraci%C3%B3n%20b%C3%A1sica%20de%20dispositivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Configuración básica de dispositivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/2%20Conceptos%20de%20switching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Conceptos de switching
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/3%20VLANs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 VLANs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/4%20Inter-VLAN%20Routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Inter VLAN Routing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2" id="__nav_11_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 5   6 Redes Redundantes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 5   6 Redes Redundantes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2_1" id="__nav_11_2_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1 CONCEPTOS STP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_11_2_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            1 CONCEPTOS STP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/1%20Prop%C3%B3sito%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Propósito del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/2%20Funcionamientos%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Funcionamientos del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes_Redundantes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2_2" id="__nav_11_2_1_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2 EtherChannel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_11_2_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 EtherChannel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/1.%20Funcionamiento%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Funcionamiento de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/2.%20Configuraci%C3%B3n%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/3.%20Verificaci%C3%B3n%20y%20soluci%C3%B3n%20de%20problemas%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verificación y solución de problemas de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/Pr%C3%A1ctica%20del%20m%C3%B3dulo%20y%20cuestionario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica del módulo y cuestionario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_3" id="__nav_11_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 7   9 Redes Disponibles y Confiables
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 7   9 Redes Disponibles y Confiables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%207%20-%209%20Redes%20Disponibles%20y%20Confiables/7%20DHCPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Competitive programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Competitive programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitive-programming/ICPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitive-programming/Sieve%20of%20Eratosthenes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sieve of Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ctf agetic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Ctf agetic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf-agetic/criptograf%C3%ADa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sql injection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sql injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf-agetic/sql%20injection/commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            English academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english-academy/Tiempos%20Verbales/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiempos Verbales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english-academy/VERBOS%20REGULARES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HOMEWORK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_4">
+            <span class="md-nav__icon md-icon"></span>
+            HOMEWORK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english-academy/HOMEWORK/VERBOS%20REGULARES%20E%20IRREGULARES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES E IRREGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Htb academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            Htb academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_2" id="__nav_15_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Nmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_3" id="__nav_15_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_3">
+            <span class="md-nav__icon md-icon"></span>
+            Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/Jobs/Ingeniero%20de%20contenido/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ingeniero de contenido
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4" id="__nav_15_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MODULOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4">
+            <span class="md-nav__icon md-icon"></span>
+            MODULOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_1" id="__nav_15_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ATAQUES DEL LADO DEL SERVIDOR
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            ATAQUES DEL LADO DEL SERVIDOR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/ATAQUES%20DEL%20LADO%20DEL%20SERVIDOR/Ataques%20del%20lado%20del%20servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ataques del lado del servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_2" id="__nav_15_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Enumeración de host
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evasión de firewalls e IDS/IPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/ENUMERACION%20DE%20REDES%20CON%20NMAP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ENUMERACION DE REDES CON NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_3" id="__nav_15_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_3_2" id="__nav_15_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4" id="__nav_15_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TIER 0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            TIER 0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/Login%20Brute%20Forcing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Login Brute Forcing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2" id="__nav_15_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_1" id="__nav_15_4_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_1_2" id="__nav_15_4_4_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_2" id="__nav_15_4_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            INTRODUCCION A LA CREACION DE REDES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_2_2" id="__nav_15_4_4_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/1%20Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descripción general de la red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/2%20Estructura%20de%20la%20red/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/3%20Flujo%20de%20trabajo%20de%20redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelos de redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_3" id="__nav_15_4_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/Introducci%C3%B3n%20a%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_3_2" id="__nav_15_4_4_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/1.%20Por%20qu%C3%A9%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Por qué Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/2.%20Fundamentos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Fundamentos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/3.%20Protocolos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Protocolos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/4.%20Todo%20sobre%20los%20usuarios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Todo sobre los usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_4" id="__nav_15_4_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a la programación en Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_4_2" id="__nav_15_4_4_2_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/1.%20Introduccion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/2.%20Componentes%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Componentes de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/3.%20Control%20de%20secuencias%20de%20comandos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de secuencias de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/4.%20Flujo%20de%20ejecuci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/Revalidate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revalidate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_5" id="__nav_15_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Htb commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_5">
+            <span class="md-nav__icon md-icon"></span>
+            Htb commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/htb-commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMANDOS UTILIZADOS DURANTE LA PRACTICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/htb-commands/SUMMARY/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_5_3" id="__nav_15_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratorios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/htb-commands/laboratorios/laboratorio-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    laboratorio 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_6" id="__nav_15_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_6">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/labs/1.%20punto%20de%20partida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aprenda los conceptos básicos de las pruebas de penetración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/labs/Helper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_6_3" id="__nav_15_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier I
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tier I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/labs/Tier%20I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_7" id="__nav_15_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proceso de aprendisaje
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_7">
+            <span class="md-nav__icon md-icon"></span>
+            Proceso de aprendisaje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/proceso%20de%20aprendisaje/1.%20Mentalidad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Mentalidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/proceso%20de%20aprendisaje/2.%20Dependencias%20de%20aprendizaje/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Dependencias de aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/proceso%20de%20aprendisaje/3.%20Descripci%C3%B3n%20general%20del%20aprendizaje/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Descripción general del aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../htb-academy/proceso%20de%20aprendisaje/4.%20El%20proceso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. El proceso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software developer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Software developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROYECTOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Programación Funcional Con Java
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Programación Funcional Con Java
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programacion-funcional-con-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación Funcional Con Java
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programación Funcional Con Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-programacion-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es la Programación Funcional?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion-funcional-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación Funcional en Java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces Funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expresiones-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expresiones Lambda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una Función?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion-pura" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una Función Pura?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion-de-orden-superior" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una Función de Orden Superior?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inmutabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inmutabilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-como-ciudadanos-de-primera-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones como ciudadanos de primera clase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-puras-e-impuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones puras e Impuras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones puras e Impuras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-puras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones Puras:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-impuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones Impuras:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entendiendo-dos-jugadores-clave-sam-y-functionalinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entendiendo dos jugadores clave: SAM y FunctionalInterface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operador de Referencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analizando-la-inferencia-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analizando la inferencia de tipos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dandole-nombre-a-un-viejo-amigo-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dándole nombre a un viejo amigo: Chaining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entendiendo-la-composicion-de-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entendiendo la composición de funciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-del-paquete-javautilfunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces del paquete java.util.function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efectos-secundarios-observables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Efectos secundarios observables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Exam%20Certification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Exam Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_5" id="__nav_16_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_5">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/CONVENTIONAL%20COMMIT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CONVENTIONAL COMMIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/Hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6" id="__nav_16_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Patrones de diseño
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6">
+            <span class="md-nav__icon md-icon"></span>
+            Patrones de diseño
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_1" id="__nav_16_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Comportamiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Comportamiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/comportamiento/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_2" id="__nav_16_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Creacionales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Creacionales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/1%20Factory%20Method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Factory Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/2%20Abstract%20Factory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Abstract Factory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/3%20Builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/4%20Prototype/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Prototype
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/5%20Singleton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Singleton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patrones creacionales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_2_7" id="__nav_16_6_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_16_6_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ejercicios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/creacionales/ejercicios/Builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    easy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_3" id="__nav_16_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Estructurales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Estructurales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrones%20de%20dise%C3%B1o/estructurales/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programacion-funcional-con-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación Funcional Con Java
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programación Funcional Con Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-la-programacion-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es la Programación Funcional?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion-funcional-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación Funcional en Java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces Funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expresiones-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expresiones Lambda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una Función?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion-pura" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una Función Pura?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-funcion-de-orden-superior" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una Función de Orden Superior?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inmutabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inmutabilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-como-ciudadanos-de-primera-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones como ciudadanos de primera clase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-puras-e-impuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones puras e Impuras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones puras e Impuras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-puras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones Puras:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-impuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones Impuras:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entendiendo-dos-jugadores-clave-sam-y-functionalinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entendiendo dos jugadores clave: SAM y FunctionalInterface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operador de Referencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analizando-la-inferencia-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analizando la inferencia de tipos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dandole-nombre-a-un-viejo-amigo-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dándole nombre a un viejo amigo: Chaining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entendiendo-la-composicion-de-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entendiendo la composición de funciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-del-paquete-javautilfunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces del paquete java.util.function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efectos-secundarios-observables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Efectos secundarios observables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Programación Funcional Con Java</h1>
+
+<h2 id="programacion-funcional-con-java">Programación Funcional Con Java<a class="headerlink" href="#programacion-funcional-con-java" title="Permanent link">&para;</a></h2>
+<h3 id="que-es-la-programacion-funcional">¿Qué es la Programación Funcional?<a class="headerlink" href="#que-es-la-programacion-funcional" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La programación funcional es un <strong>paradigma</strong> de programación que trata la computación como la evaluación de <strong>funciones</strong> <strong>matemáticas</strong> y evita el cambio de estado y los datos mutables.</li>
+<li>La programación funcional es declarativa en lugar de imperativa, y el estado de la aplicación fluye a través de funciones puras. En contraste con la programación orientada a objetos, donde el estado de la aplicación generalmente se comparte y se ubica junto con los métodos en los objetos.</li>
+</ul>
+<h3 id="programacion-funcional-en-java">Programación Funcional en Java<a class="headerlink" href="#programacion-funcional-en-java" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Java 8 introdujo un nuevo paquete <code>java.util.function</code> que contiene interfaces funcionales que se pueden usar como <strong>expresiones lambda</strong>.</li>
+<li>Java 8 también introdujo una nueva sintaxis llamada <strong>referencia de método</strong> que se puede usar para expresiones lambda.</li>
+<li>Un ejemplo es la interfaz funcional <code>Predicate</code> que tiene un método <code>test(T t)</code> que devuelve un valor booleano. Esta interfaz se puede usar para expresiones lambda y referencias de métodos.</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Predicate</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Example</span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>
+<span class="w">        </span><span class="n">predicate</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">);</span><span class="w">              </span><span class="c1">// true</span>
+<span class="w">        </span><span class="n">predicate</span><span class="p">.</span><span class="na">negate</span><span class="p">().</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// false</span>
+<span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nonNull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Objects</span><span class="p">::</span><span class="n">nonNull</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span><span class="w"> </span><span class="n">isNull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Objects</span><span class="p">::</span><span class="n">isNull</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">isEmpty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">::</span><span class="n">isEmpty</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">isNotEmpty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isEmpty</span><span class="p">.</span><span class="na">negate</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="interfaces-funcionales">Interfaces Funcionales<a class="headerlink" href="#interfaces-funcionales" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Una interfaz funcional es una interfaz que contiene solo un método abstracto.</li>
+<li>Solo pueden tener una funcionalidad para exhibir.</li>
+<li>A partir de Java 8 en adelante, las expresiones lambda se pueden utilizar para representar la instancia de una interfaz funcional.</li>
+<li>Un ejemplo de la interfaz funcional es el ejemplo anterior, la interfaz <code>Predicate</code> es una interfaz funcional porque solo tiene un método abstracto test(T t).</li>
+</ul>
+<h3 id="expresiones-lambda">Expresiones Lambda<a class="headerlink" href="#expresiones-lambda" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Una expresión lambda es un bloque corto de código que toma parámetros y devuelve un valor.</li>
+<li>Las expresiones lambda son similares a los métodos y se llaman (funciones anónimas), pero no necesitan un nombre y se pueden implementar directamente en el cuerpo de un método.</li>
+</ul>
+<p><strong><em>Para entender el concepto de la programación funcional en Java, debes entender algunos conceptos clave</em></strong></p>
+<h3 id="que-es-una-funcion">¿Qué es una Función?<a class="headerlink" href="#que-es-una-funcion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Una función es un bloque de código que realiza una tarea específica.</li>
+<li>Una función toma uno o más parámetros de entrada, opera sobre ellos y produce una salida.</li>
+<li>La salida producida por una función se llama el valor de retorno de la función.</li>
+</ul>
+<h3 id="que-es-una-funcion-pura">¿Qué es una Función Pura?<a class="headerlink" href="#que-es-una-funcion-pura" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Una función pura es una función donde el valor de retorno está determinado solo por sus valores de entrada, sin efectos secundarios observables.</li>
+<li>Así es como funcionan las funciones en matemáticas: <code>Math.cos(x)</code> siempre devolverá el mismo resultado para el mismo valor de x.</li>
+<li>Las funciones puras no tienen efectos secundarios observables, como llamadas a la red o a la base de datos.</li>
+</ul>
+<h3 id="que-es-una-funcion-de-orden-superior">¿Qué es una Función de Orden Superior?<a class="headerlink" href="#que-es-una-funcion-de-orden-superior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Una función de orden superior es una función que toma funciones como parámetros o devuelve una función.</li>
+<li>Las funciones de orden superior se utilizan a menudo para:<ul>
+<li>Abstraer o aislar acciones, efectos o control de flujo asíncrono utilizando funciones de devolución de llamada, promises.</li>
+<li>Crear utilidades que pueden actuar en una amplia variedad de tipos de datos</li>
+<li>Aplicar parcialmente una función a sus argumentos o crear una función curada con el propósito de reutilización o composición de funciones</li>
+<li>Tomar una lista de funciones y devolver alguna composición de esas funciones de entrada</li>
+</ul>
+</li>
+<li>Un ejemplo de la función de orden superior es el siguiente ejemplo:</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Example</span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">add1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mult2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">add1Mult2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add1</span><span class="p">.</span><span class="na">andThen</span><span class="p">(</span><span class="n">mult2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">add1Mult2</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">         </span><span class="c1">// 6</span>
+<span class="w">        </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mult2add1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add1</span><span class="p">.</span><span class="na">compose</span><span class="p">(</span><span class="n">mult2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mult2add1</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">         </span><span class="c1">// 5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>La explicación es :<ul>
+<li>La función add1 suma 1 al valor de entrada.</li>
+<li>La función mult2 multiplica el valor de entrada por 2.</li>
+<li>La función add1Mult2 primero aplica la función add1 al valor de entrada, y luego aplica la función mult2 al resultado.</li>
+<li>La función mult2add1 primero aplica la función mult2 al valor de entrada, y luego aplica la función add1 al resultado.</li>
+</ul>
+</li>
+</ul>
+<h3 id="inmutabilidad">Inmutabilidad<a class="headerlink" href="#inmutabilidad" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La inmutabilidad es un concepto que establece que el estado de un objeto no se puede modificar después de que se crea.</li>
+<li>La inmutabilidad es un concepto clave en la programación funcional porque ayuda a evitar efectos secundarios.</li>
+<li>Un ejemplo es el siguiente ejemplo:</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Example</span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Freddy&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Samuel&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Lauren&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">names</span><span class="p">);</span><span class="w">     </span><span class="c1">// [Freddy, Samuel, Lauren]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="funciones-como-ciudadanos-de-primera-clase"><strong>Funciones como ciudadanos de primera clase</strong><a class="headerlink" href="#funciones-como-ciudadanos-de-primera-clase" title="Permanent link">&para;</a></h3>
+<p>Cuando hablamos de "ciudadanos de primera clase" en el contexto de funciones en un lenguaje de programación, estamos diciendo que las funciones son tratadas como cualquier otro tipo de dato en ese lenguaje. Puedes asignarlas a variables, pasarlas como parámetros a otras funciones, retornarlas como resultados de funciones y almacenarlas en estructuras de datos. Este enfoque brinda flexibilidad y poder expresivo en la manipulación de funciones, lo cual es una característica central de los lenguajes que admiten la programación funcional.</p>
+<ol>
+<li>
+<p><strong>Ser asignadas a variables:</strong> Puedes asignar una función a una variable, de manera similar a como asignas un valor entero o una cadena. Esto permite que las funciones sean manipuladas y pasadas como argumentos a otras funciones.</p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cuadrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Ser pasadas como argumentos:</strong> Puedes pasar funciones como argumentos a otras funciones. Esto es fundamental para implementar el paradigma de programación funcional y permite una mayor flexibilidad en el diseño del código.</p>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesarNumero</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">operacion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operacion</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Resultado: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">procesarNumero</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">cuadrado</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Ser devueltas por otras funciones:</strong> Puedes devolver una función desde otra función, permitiendo construir funciones de orden superior.</p>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">obtenerFuncion</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">doblar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">doblar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">funcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obtenerFuncion</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">funcion</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Ser almacenadas en estructuras de datos:</strong> Puedes almacenar funciones en estructuras de datos como listas o mapas, lo que puede ser útil para crear estrategias flexibles y dinámicas.</p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">operaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">operaciones</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">operaciones</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// Uso</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">resultado1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operaciones</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">apply</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// resultado1 = 6</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">resultado2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operaciones</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">apply</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// resultado2 = 8</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Este enfoque es parte fundamental de la programación funcional y permite escribir código más modular, reutilizable y expresivo en Java. Con la introducción de expresiones lambda en Java 8 y las interfaces funcionales en el paquete <code>java.util.function</code>, se ha mejorado significativamente la capacidad del lenguaje para tratar a las funciones como ciudadanos de primera clase.</p>
+<h3 id="funciones-puras-e-impuras"><strong>Funciones puras e Impuras</strong><a class="headerlink" href="#funciones-puras-e-impuras" title="Permanent link">&para;</a></h3>
+<p>Las funciones puras e impuras se refieren a las características y comportamiento de funciones en términos de efectos secundarios y determinismo.</p>
+<h4 id="funciones-puras">Funciones Puras:<a class="headerlink" href="#funciones-puras" title="Permanent link">&para;</a></h4>
+<p>Se podría decir que las funciones puras también cumple el principio SRP (Una única responsabilidad).</p>
+<p>Las funciones puras son funciones que tienen dos características fundamentales:</p>
+<ol>
+<li><strong>Determinismo:</strong> Dada la misma entrada, una función pura siempre producirá la misma salida. No hay variabilidad en el resultado basada en estados externos o variables globales.</li>
+<li><strong>No Efectos Secundarios Observables:</strong> Una función pura no realiza cambios en el estado del programa fuera de la función. Esto significa que no modifica variables globales, no realiza operaciones de entrada/salida y no causa ningún otro efecto observable en el entorno.<ol>
+<li>no modifica la base de datos</li>
+<li>no genera archivos</li>
+</ol>
+</li>
+</ol>
+<p><strong>Características de Funciones Puras:</strong></p>
+<ul>
+<li><strong>Reproducibilidad:</strong> Dada una entrada específica, una función pura siempre dará el mismo resultado, lo que facilita la depuración y el razonamiento sobre el código.</li>
+<li><a href="PROYECTO%20SIS-414.md">**Testabilidad</a>:** Debido a su determinismo y falta de efectos secundarios, las funciones puras son fáciles de probar. Puedes prever y controlar las entradas y evaluar directamente las salidas.</li>
+<li><strong>Composición:</strong> Las funciones puras son fácilmente componibles. Puedes combinar funciones puras para crear funciones más complejas sin preocuparte por efectos colaterales inesperados.</li>
+</ul>
+<p><strong>Ejemplo de Función Pura:</strong></p>
+<div class="language-java highlight"><pre><span></span><code><span class="c1">// Función pura que calcula el cuadrado de un número.</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">cuadrado</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// using functional interfaces</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+<p>En este ejemplo, la función <code>cuadrado</code> toma un argumento <code>x</code> y devuelve el resultado del cuadrado de <code>x</code>. No realiza operaciones de entrada/salida, no modifica variables globales y siempre produce el mismo resultado para una entrada dada.</p>
+<blockquote>
+<p>Una función pura puede invocar a otra función pura y no a una función impura, mientras una función impura puede invocar a ambas sea pura e impura
+</p>
+</blockquote>
+<h4 id="funciones-impuras"><strong>Funciones Impuras:</strong><a class="headerlink" href="#funciones-impuras" title="Permanent link">&para;</a></h4>
+<p>Las funciones impuras son aquellas que no cumplen con alguna o ambas de las características de las funciones puras. Pueden tener efectos secundarios observables y/o no ser deterministas.</p>
+<p><strong>Características de Funciones Impuras:</strong></p>
+<ul>
+<li><strong>Efectos Secundarios:</strong> Pueden modificar variables globales, realizar operaciones de entrada/salida u otros cambios en el estado del programa.</li>
+<li><strong>No Determinismo:</strong> La misma entrada no garantiza la misma salida en todas las llamadas.</li>
+</ul>
+<p><strong>Ejemplo de Función Impura:</strong></p>
+<div class="language-java highlight"><pre><span></span><code><span class="c1">// Función impura que imprime un mensaje y retorna el cuadrado de un número.</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">cuadradoConImpureza</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Calculando el cuadrado de &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En este ejemplo, la función <code>cuadradoConImpureza</code> tiene un efecto secundario observable: imprime un mensaje en la consola. Esto la hace impura porque va más allá del cálculo del resultado y afecta al entorno exterior.</p>
+<p>En resumen, el uso de funciones puras en programación funcional mejora la <strong>legibilidad</strong>, <a href="PROYECTO%20SIS-414.md">**testabilidad</a>** y mantenimiento del código, al tiempo que facilita el razonamiento sobre el comportamiento del programa. Las funciones impuras, aunque pueden ser necesarias en ciertos casos, tienden a ser más difíciles de entender y de razonar debido a sus posibles efectos secundarios y falta de determinismo.</p>
+<h3 id="entendiendo-dos-jugadores-clave-sam-y-functionalinterface"><strong>Entendiendo dos jugadores clave: <code>SAM</code> y <code>FunctionalInterface</code></strong><a class="headerlink" href="#entendiendo-dos-jugadores-clave-sam-y-functionalinterface" title="Permanent link">&para;</a></h3>
+<p>En el contexto de Java, los términos SAM (Single Abstract Method) y Functional Interface se utilizan de manera intercambiable y están relacionados. Un SAM es una interfaz que tiene un único método abstracto, y un Functional Interface es una interfaz que cumple con esta condición. A partir de Java 8, con la introducción de expresiones lambda, estas interfaces se vuelven fundamentales para trabajar con funciones anónimas de manera más concisa.</p>
+<p>Por ejemplo, considera la interfaz <code>Runnable</code> en Java:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Runnable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Esta interfaz tiene un solo método abstracto (<code>run</code>), y además, está anotada con <code>@FunctionalInterface</code>. La anotación <code>@FunctionalInterface</code> no es estrictamente necesaria, pero se utiliza para indicar que la interfaz está diseñada para ser utilizada como un Functional Interface, y el compilador emitirá un error si se intenta agregar más de un método abstracto.</p>
+<p>Con Java 8, puedes usar expresiones lambda para proporcionar implementaciones concisas de interfaces funcionales:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="c1">// Uso de expresión lambda con Runnable</span>
+<span class="n">Runnable</span><span class="w"> </span><span class="n">myRunnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello from Runnable&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Aquí, <code>myRunnable</code> es una instancia de una interfaz funcional (<code>Runnable</code>) mediante el uso de una expresión lambda.</p>
+<p>En resumen, SAM (Single Abstract Method) y Functional Interface son conceptos que se utilizan para describir interfaces con un solo método abstracto en Java, y estos se volvieron más prominentes y útiles con la introducción de expresiones lambda en Java 8.</p>
+<h3 id="operador-de-referencia"><strong>Operador de Referencia</strong><a class="headerlink" href="#operador-de-referencia" title="Permanent link">&para;</a></h3>
+<p>El operador de referencia en Java es una característica que se introdujo en Java 8 para simplificar la expresión de las lambdas que se utilizan comúnmente con interfaces funcionales. Permite referenciar métodos existentes o constructores mediante un nombre en lugar de proporcionar una implementación directa del método.</p>
+<p>Existen cuatro tipos principales de operadores de referencia en Java:</p>
+<ol>
+<li><strong>Referencia a un método estático:</strong>
+Puedes referenciar un método estático utilizando el nombre de la clase que lo contiene.
+Estructura: <code>(ClassName::methodName)</code></li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="c1">// Expresión lambda</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parseInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">    </span>
+<span class="c1">// Operador de referencia a método estático</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parseIntRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">::</span><span class="n">parseInt</span><span class="p">;</span>
+</code></pre></div>
+<ol>
+<li><strong>Referencia a un método de instancia de un objeto particular:</strong>
+Puedes referenciar un método de instancia de un objeto específico utilizando el nombre del objeto seguido por el doble colon y el nombre del método. Estructura: <code>(objectOfClass::methodName)</code></li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// Expresión lambda</span>
+<span class="w">    </span><span class="n">BiPredicate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">startsWith</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Operador de referencia a método de instancia</span>
+<span class="w">    </span><span class="n">BiPredicate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">startsWithRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">::</span><span class="n">startsWith</span><span class="p">;</span>
+</code></pre></div>
+<ol>
+<li><strong>Referencia a un método de instancia de un tipo arbitrario:</strong>
+Puedes referenciar un método de instancia de un tipo arbitrario utilizando el nombre del tipo seguido por el doble colon y el nombre del método.</li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// Expresión lambda</span>
+<span class="w">    </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lengthComparator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">s2</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Operador de referencia a método de instancia de tipo arbitrario</span>
+<span class="w">    </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lengthComparatorRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li><strong>Referencia a un constructor:</strong>
+Puedes referenciar un constructor utilizando el nombre de la clase seguido por <code>::</code> y <code>new</code>. Estructura: <code>(super::methodName)</code>
+<div class="language-java highlight"><pre><span></span><code><span class="c1">// Expresión lambda</span>
+<span class="n">Supplier</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">listSupplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="c1">// Operador de referencia a constructor</span>
+<span class="n">Supplier</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">listSupplierRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">::</span><span class="k">new</span><span class="p">;</span>
+</code></pre></div></li>
+</ol>
+<p>El uso de operadores de referencia puede hacer que el código sea más conciso y legible, especialmente cuando estás trabajando con interfaces funcionales y expresiones lambda. Estos operadores facilitan la reutilización de código existente al referenciar métodos ya definidos en lugar de proporcionar una implementación directa.</p>
+<h3 id="analizando-la-inferencia-de-tipos"><strong>Analizando la inferencia de tipos</strong><a class="headerlink" href="#analizando-la-inferencia-de-tipos" title="Permanent link">&para;</a></h3>
+<p>La inferencia de tipos es una característica en lenguajes de programación que permite al compilador deducir o inferir el tipo de una variable basándose en el contexto y en el tipo de datos con el que se está trabajando. Java introduce la inferencia de tipos local (también conocida como "var") a partir de Java 10, y esto se utiliza para declarar variables locales de una manera más concisa sin tener que repetir explícitamente el tipo de la variable.</p>
+<p>Veamos un ejemplo para entender mejor la inferencia de tipos en Java:</p>
+<p>Antes de Java 10:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaDeCadenas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Con inferencia de tipos (Java 10 y posteriores):</p>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">listaDeCadenas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>En este caso, la palabra clave <code>var</code> se utiliza en lugar de la declaración explícita del tipo de la variable. El compilador infiere que <code>listaDeCadenas</code> es de tipo <code>ArrayList&lt;String&gt;</code> basándose en el tipo de datos utilizado en el lado derecho de la asignación.</p>
+<p>La inferencia de tipos no significa que Java se esté convirtiendo en un lenguaje de tipado dinámico; más bien, sigue siendo un lenguaje de tipado estático. El tipo de la variable se determina en tiempo de compilación, y una vez que se ha inferido, la variable es tratada como si se hubiera declarado con el tipo explícito.</p>
+<p>Algunas consideraciones sobre la inferencia de tipos:</p>
+<ol>
+<li><strong>Contexto de Uso:</strong> La inferencia de tipos depende del contexto de uso de la variable. El tipo de la variable se infiere según el tipo de datos con el que está siendo inicializada.</li>
+<li><strong>No se aplica a variables de instancia:</strong> La inferencia de tipos se aplica solo a variables locales con inicialización. No se puede utilizar para declarar variables de instancia de una clase.</li>
+<li><strong>Claridad y Legibilidad:</strong> Mientras que la inferencia de tipos puede hacer que el código sea más conciso, es importante utilizarla con moderación y en situaciones donde el tipo sea obvio. La claridad y legibilidad del código son fundamentales.</li>
+</ol>
+<p>Ejemplo:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hola, mundo!&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Inferencia de tipo String</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Inferencia de tipo List&lt;Integer&gt;</span>
+</code></pre></div>
+<p>En resumen, la inferencia de tipos en Java proporciona una manera más concisa de declarar variables locales, reduciendo la redundancia en la escritura del código mientras se mantiene la seguridad de tipos estáticos. Es decir java Adivina el tipo de dato en tiempo de compilación, el tipo de dato es asignado en base a dato que se le da</p>
+<h3 id="dandole-nombre-a-un-viejo-amigo-chaining"><strong>Dándole nombre a un viejo amigo: <code>Chaining</code></strong><a class="headerlink" href="#dandole-nombre-a-un-viejo-amigo-chaining" title="Permanent link">&para;</a></h3>
+<p>El "<code>chaining</code>" en programación se refiere a la práctica de encadenar varias operaciones o métodos en una sola expresión o línea de código. Esta técnica es comúnmente utilizada en programación funcional y en algunos casos en programación orientada a objetos.</p>
+<p>En el contexto de la programación funcional, el <code>chaining</code> se asocia a menudo con el concepto de "<code>pipelining</code>" o "composición de funciones". Consiste en aplicar una serie de funciones o transformaciones de manera secuencial, donde el resultado de una función se pasa como entrada a la siguiente. Esto puede hacer que el código sea más conciso y expresivo.</p>
+<p>Ejemplo de <code>chaining</code> en programación funcional en Java:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;María&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ana&quot;</span><span class="p">);</span>
+
+<span class="c1">// Usando expresiones lambda y chaining</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">cantidadLetras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                            </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nombre</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;M&quot;</span><span class="p">))</span>
+<span class="w">                            </span><span class="p">.</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">)</span>
+<span class="w">                            </span><span class="p">.</span><span class="na">sum</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La suma de las longitudes de los nombres que comienzan con &#39;M&#39; es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cantidadLetras</span><span class="p">);</span>
+</code></pre></div>
+<p>En este ejemplo, se utiliza el <code>chaining</code> con la API de <code>Streams</code> en Java para realizar varias operaciones en una única línea. El método <code>stream()</code> crea un flujo de datos a partir de la lista de nombres, y luego se encadenan operaciones como <code>filter</code> y <code>mapToInt</code> para filtrar los nombres que comienzan con "M" y calcular la suma de las longitudes de esos nombres.</p>
+<p>En el contexto de programación orientada a objetos, el <code>chaining</code> se refiere a invocar varios métodos de manera secuencial en el mismo objeto. Esto puede ser especialmente útil cuando los métodos retornan el propio objeto, permitiendo encadenar más operaciones.</p>
+<p>Ejemplo de <code>chaining</code> en Java:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">StringBuilder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+
+<span class="n">builder</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;Mundo&quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;!&quot;</span><span class="p">);</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">resultado</span><span class="p">);</span><span class="w">  </span><span class="c1">// Salida: Hola Mundo!</span>
+</code></pre></div>
+<p>En este caso, los métodos <code>append</code> del objeto <code>StringBuilder</code> devuelven el propio objeto <code>StringBuilder</code>, lo que permite encadenar múltiples llamadas en una sola línea.</p>
+<p>El <code>chaining</code> es una técnica que puede mejorar la legibilidad y concisión del código, pero también debe usarse con moderación para no comprometer la claridad del código.</p>
+<h3 id="entendiendo-la-composicion-de-funciones"><strong>Entendiendo la composición de funciones</strong><a class="headerlink" href="#entendiendo-la-composicion-de-funciones" title="Permanent link">&para;</a></h3>
+<p>El "pipelining" o "composición de funciones" en Java se refiere a la aplicación secuencial de funciones o transformaciones a través de un flujo de datos, donde el resultado de una función se pasa como entrada a la siguiente. Esto se logra utilizando combinaciones de funciones (o métodos) que procesan datos de manera encadenada.</p>
+<p>En Java, la programación funcional y el uso de expresiones lambda facilitan la implementación de este enfoque. La API de Streams en Java es un buen ejemplo de cómo se puede aplicar el "pipelining" para operaciones de procesamiento de datos en colecciones.</p>
+<p>Veamos un ejemplo simple de composición de funciones en Java utilizando expresiones lambda y la API de Streams:</p>
+<div class="language-java highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.Collectors</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">palabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Java&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;divertido&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;poderoso&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Aplicar pipelining o composición de funciones con Streams</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">palabra</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">palabra</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">       </span><span class="c1">// Filtrar palabras con longitud mayor a 3</span>
+<span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span><span class="w">                     </span><span class="c1">// Convertir a mayúsculas</span>
+<span class="w">                </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w">                </span><span class="c1">// Recolectar los resultados en una lista</span>
+
+<span class="w">        </span><span class="c1">// Imprimir el resultado</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">resultado</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En este ejemplo:</p>
+<ol>
+<li><code>.stream()</code>: Convierte la lista de palabras en un flujo de datos (Stream).</li>
+<li><code>.filter(...)</code>: Filtra las palabras que tienen una longitud mayor a 3 caracteres.</li>
+<li><code>.map(...)</code>: Convierte cada palabra a mayúsculas.</li>
+<li><code>.collect(...)</code>: Recolecta los resultados en una lista.</li>
+</ol>
+<p>Esto muestra cómo las operaciones se encadenan de manera secuencial, aplicando una tras otra sobre los elementos del flujo de datos. Cada operación toma el resultado de la anterior y lo transforma o filtra según la lógica proporcionada.</p>
+<p>Este enfoque facilita la creación de código más declarativo y legible, donde puedes expresar la lógica de procesamiento de datos de manera más concisa y comprensible. La composición de funciones es una parte fundamental de la programación funcional, y Java, especialmente a partir de la versión 8, proporciona características que permiten aprovechar este paradigma de manera efectiva.</p>
+<h3 id="interfaces-del-paquete-javautilfunction">Interfaces del paquete <code>java.util.function</code><a class="headerlink" href="#interfaces-del-paquete-javautilfunction" title="Permanent link">&para;</a></h3>
+<p>Claro, aquí tienes una breve descripción de todas las interfaces en el paquete <code>java.util.function</code>:</p>
+<ol>
+<li>
+<p><strong><code>BiConsumer&lt;T, U&gt;</code>:</strong></p>
+<ul>
+<li><strong>Propósito:</strong> Acepta dos argumentos de tipo T y U, realiza operaciones sin devolver resultados.</li>
+<li><strong>Uso:</strong> Se utiliza para operaciones que consumen dos argumentos.</li>
+<li>
+<p><strong>Ejemplo:</strong></p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">imprimirCantidadLetras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La palabra &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; tiene &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; letras.&quot;</span><span class="p">);</span>
+<span class="n">imprimirCantidadLetras</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>BiFunction&lt;T, U, R&gt;</code>:</strong></p>
+<ul>
+<li><strong>Propósito:</strong> Acepta dos argumentos de tipo T y U, devuelve un resultado de tipo R.</li>
+<li><strong>Uso:</strong> Se utiliza para transformaciones que involucran dos tipos de datos.</li>
+<li>
+<p><strong>Ejemplo:</strong></p>
+<div class="language-java highlight"><pre><span></span><code><span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">suma</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>BinaryOperator&lt;T&gt;</code>:</strong></p>
+<ul>
+<li><strong>Propósito:</strong> Es una especialización de <code>BiFunction</code> donde los dos argumentos y el resultado son del mismo tipo T.</li>
+<li><strong>Uso:</strong> Se utiliza para operaciones binarias que comparten el mismo tipo de entrada y salida.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="n">BinaryOperator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">multiplicacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiplicacion</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>Propósito:</strong> Evalúa un predicado sobre dos argumentos de tipo T y U, devuelve un valor booleano.</li>
+<li><strong><code>BiPredicate&lt;T, U&gt;</code>:</strong></li>
+<li><strong>Uso:</strong> Se utiliza para evaluar condiciones que involucran dos tipos de datos.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+</li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="n">BiPredicate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">esLongitudCorrecta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esLongitudCorrecta</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">     </span>
+</code></pre></div>
+<ol>
+<li><strong><code>BooleanSupplier</code>:</strong><ul>
+<li><strong>Propósito:</strong> No toma argumentos y devuelve un valor booleano.</li>
+<li><strong>Uso:</strong> Se utiliza para proveer valores booleanos sin tomar parámetros.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+</li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="n">BooleanSupplier</span><span class="w"> </span><span class="n">obtenerValor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obtenerValor</span><span class="p">.</span><span class="na">getAsBoolean</span><span class="p">();</span>
+</code></pre></div>
+<ol>
+<li><strong><code>Consumer&lt;T&gt;</code>:</strong><ul>
+<li><strong>Propósito:</strong> Acepta un argumento de tipo T y realiza operaciones sin devolver resultados.</li>
+<li><strong>Uso:</strong> Se utiliza para operaciones que consumen un solo argumento.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+</li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">imprimirMensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mensaje</span><span class="p">);</span>
+<span class="n">imprimirMensaje</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">&quot;Hola, mundo!&quot;</span><span class="p">);</span><span class="w">       </span>
+</code></pre></div>
+<ol>
+<li><strong><code>DoubleBinaryOperator</code>, <code>DoubleConsumer</code>, <code>DoubleFunction&lt;R&gt;</code>, <code>DoublePredicate</code>, <code>DoubleSupplier</code>, <code>DoubleToIntFunction</code>, <code>DoubleToLongFunction</code>, <code>DoubleUnaryOperator</code>:</strong><ul>
+<li>Son interfaces especializadas para operaciones con valores de tipo <code>double</code>.</li>
+</ul>
+</li>
+<li><strong><code>Function&lt;T, R&gt;</code>:</strong><ul>
+<li><strong>Propósito:</strong> Acepta un argumento de tipo T y devuelve un resultado de tipo R.</li>
+<li><strong>Uso:</strong> Se utiliza para transformar un tipo de dato en otro.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+</li>
+</ol>
+<div class="language-java highlight"><pre><span></span><code><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">convertirAString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">convertirAString</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li><strong><code>IntBinaryOperator</code>, <code>IntConsumer</code>, <code>IntFunction&lt;R&gt;</code>, <code>IntPredicate</code>, <code>IntSupplier</code>, <code>IntToDoubleFunction</code>, <code>IntToLongFunction</code>, <code>IntUnaryOperator</code>:</strong><ul>
+<li>Son interfaces especializadas para operaciones con valores de tipo <code>int</code>.</li>
+</ul>
+</li>
+<li><strong><code>LongBinaryOperator</code>, <code>LongConsumer</code>, <code>LongFunction&lt;R&gt;</code>, <code>LongPredicate</code>, <code>LongSupplier</code>, <code>LongToDoubleFunction</code>, <code>LongToIntFunction</code>, <code>LongUnaryOperator</code>:</strong><ul>
+<li>Son interfaces especializadas para operaciones con valores de tipo <code>long</code>.</li>
+</ul>
+</li>
+<li><strong><code>ObjDoubleConsumer&lt;T&gt;</code>, <code>ObjIntConsumer&lt;T&gt;</code>, <code>ObjLongConsumer&lt;T&gt;</code>:</strong><ul>
+<li>Aceptan un objeto de tipo T y un valor primitivo, pero no devuelven resultados.</li>
+<li>Se utilizan para operaciones que consumen un objeto y un valor primitivo.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Predicate&lt;T&gt;</code>:</strong></p>
+<ul>
+<li><strong>Propósito:</strong> Evalúa un predicado sobre un solo argumento de tipo T y devuelve un valor booleano.</li>
+<li><strong>Uso:</strong> Se utiliza para realizar pruebas y devolver un valor booleano.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">esPar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esPar</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong><code>Supplier&lt;T&gt;</code>:</strong></p>
+<ul>
+<li><strong>Propósito:</strong> No toma argumentos y suministra un resultado de tipo T.</li>
+<li><strong>Uso:</strong> Se utiliza para generar o proporcionar valores.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">obtenerNumeroAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">numeroAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obtenerNumeroAleatorio</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong><code>ToDoubleBiFunction&lt;T, U&gt;</code>, <code>ToDoubleFunction&lt;T&gt;</code>, <code>ToIntBiFunction&lt;T, U&gt;</code>, <code>ToIntFunction&lt;T&gt;</code>, <code>ToLongBiFunction&lt;T, U&gt;</code>, <code>ToLongFunction&lt;T&gt;</code>:</strong></p>
+<ul>
+<li>Convierten objetos de tipo T en valores primitivos (<code>double</code>, <code>int</code>, <code>long</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong><code>UnaryOperator&lt;T&gt;</code>:</strong></p>
+<ul>
+<li><strong>Propósito:</strong> Es una especialización de <code>Function</code> donde el argumento y el resultado son del mismo tipo T.</li>
+<li><strong>Uso:</strong> Se utiliza para operaciones unarias que comparten el mismo tipo de entrada y salida.</li>
+<li><strong>Ejemplo:</strong></li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span class="n">UnaryOperator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">agregarSaludo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;Hola, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agregarSaludo</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">&quot;mundo&quot;</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="efectos-secundarios-observables">Efectos secundarios observables<a class="headerlink" href="#efectos-secundarios-observables" title="Permanent link">&para;</a></h2>
+<p>Estas interfaces forman la base de la programación funcional en Java y proporcionan una manera concisa y expresiva de trabajar con funciones y expresiones lambda en el lenguaje. Pueden ser utilizadas en una variedad de contextos, como Streams, para realizar operaciones más efectivas y legibles en colecciones de datos</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 by K3V1N 117
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "content.code.highlight"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
