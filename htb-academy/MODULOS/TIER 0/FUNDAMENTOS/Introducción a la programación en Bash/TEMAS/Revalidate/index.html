@@ -1,0 +1,6436 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4.%20Flujo%20de%20ejecuci%C3%B3n/">
+      
+      
+        <link rel="next" href="../../../../../../htb-commands/">
+      
+      
+      <link rel="icon" href="../../../../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Revalidate - learning hub of the future</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/custom_htb.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#captura-de-informacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../../.." title="learning hub of the future" class="md-header__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            learning hub of the future
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Revalidate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="learning hub of the future" class="md-nav__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    learning hub of the future
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../PROYECTO%20SIS-414/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTO SIS 414
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../PYTHON%20CERTIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PYTHON CERTIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../Palabras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palabras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../obsidian_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obsidian compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitecto DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../DevOps/Arquitecto%20DevOps/Arquitecto%20DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../DevOps/Azure/AZ-400%20Desarrollo%20para%20DevOps%20empresarial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ 400 Desarrollo para DevOps empresarial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../DevOps/Azure/AZ-400%20EXPLORACION%20DE%20ENLACES%20DE%20GIT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a los enlaces de Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Github actions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Github actions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../DevOps/github-actions/GitHub%20Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aspectos básicos de la implementación automatizada de aplicaciones con GitHub Actions y GitHub Pages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMARIO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMARIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../DevOps/github-actions/TEMARIO/Gu%C3%ADa%201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación de un flujo de trabajo con GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/Learn%20AI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ANEXOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            ANEXOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/ANEXOS/ai-mastery-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta Definitiva para Dominar la Inteligencia Artificial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/ANEXOS/future-learning-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Mejorada: Presente y Futuro de IA y Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/ANEXOS/learning-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Integral en Ciencia de Datos, IA y MLOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo de Apps con LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Desarrollo%20de%20Apps%20con%20LLMs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Embeddings%20y%20Bases%20de%20Datos%20Vectoriales%20para%20NLP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embeddings y Bases de Datos Vectoriales para NLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Backend hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Backend hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../backend-hub/Generadores%20en%20JavaScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El poder de function* y yield
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../backend-hub/Graphql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Closures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../backend-hub/closures/Profundizando%20en%20Middlewares%20y%20Closures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profundizando en Middlewares y Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../backend-hub/closures/closures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cisco academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Cisco academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CCNA 2 v7
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            CCNA 2 v7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1" id="__nav_11_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_1" id="__nav_11_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/1%20Configuraci%C3%B3n%20b%C3%A1sica%20de%20dispositivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Configuración básica de dispositivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/2%20Conceptos%20de%20switching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Conceptos de switching
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/3%20VLANs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 VLANs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/4%20Inter-VLAN%20Routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Inter VLAN Routing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2" id="__nav_11_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 5   6 Redes Redundantes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 5   6 Redes Redundantes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2_1" id="__nav_11_2_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1 CONCEPTOS STP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_11_2_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            1 CONCEPTOS STP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/1%20Prop%C3%B3sito%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Propósito del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/2%20Funcionamientos%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Funcionamientos del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes_Redundantes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2_2" id="__nav_11_2_1_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2 EtherChannel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_11_2_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 EtherChannel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/1.%20Funcionamiento%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Funcionamiento de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/2.%20Configuraci%C3%B3n%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/3.%20Verificaci%C3%B3n%20y%20soluci%C3%B3n%20de%20problemas%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verificación y solución de problemas de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/Pr%C3%A1ctica%20del%20m%C3%B3dulo%20y%20cuestionario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica del módulo y cuestionario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_3" id="__nav_11_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 7   9 Redes Disponibles y Confiables
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 7   9 Redes Disponibles y Confiables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%207%20-%209%20Redes%20Disponibles%20y%20Confiables/7%20DHCPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Competitive programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Competitive programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../competitive-programming/ICPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../competitive-programming/Sieve%20of%20Eratosthenes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sieve of Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ctf agetic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Ctf agetic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ctf-agetic/criptograf%C3%ADa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sql injection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sql injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ctf-agetic/sql%20injection/commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            English academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../english-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../english-academy/Tiempos%20Verbales/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiempos Verbales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../english-academy/VERBOS%20REGULARES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HOMEWORK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_4">
+            <span class="md-nav__icon md-icon"></span>
+            HOMEWORK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../english-academy/HOMEWORK/VERBOS%20REGULARES%20E%20IRREGULARES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES E IRREGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Htb academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            Htb academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../PLANIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_2" id="__nav_15_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Nmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_3" id="__nav_15_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_3">
+            <span class="md-nav__icon md-icon"></span>
+            Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../Jobs/Ingeniero%20de%20contenido/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ingeniero de contenido
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15_4" id="__nav_15_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MODULOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15_4">
+            <span class="md-nav__icon md-icon"></span>
+            MODULOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_1" id="__nav_15_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ATAQUES DEL LADO DEL SERVIDOR
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            ATAQUES DEL LADO DEL SERVIDOR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ATAQUES%20DEL%20LADO%20DEL%20SERVIDOR/Ataques%20del%20lado%20del%20servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ataques del lado del servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_2" id="__nav_15_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Enumeración de host
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evasión de firewalls e IDS/IPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/ENUMERACION%20DE%20REDES%20CON%20NMAP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ENUMERACION DE REDES CON NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_3" id="__nav_15_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_3_2" id="__nav_15_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4" id="__nav_15_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TIER 0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            TIER 0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Login%20Brute%20Forcing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Login Brute Forcing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2" id="__nav_15_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_4_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_1" id="__nav_15_4_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_1_2" id="__nav_15_4_4_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_2" id="__nav_15_4_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            INTRODUCCION A LA CREACION DE REDES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_2_2" id="__nav_15_4_4_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/1%20Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descripción general de la red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/2%20Estructura%20de%20la%20red/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/3%20Flujo%20de%20trabajo%20de%20redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelos de redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_3" id="__nav_15_4_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3n%20a%20Active%20Directory/Introducci%C3%B3n%20a%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_3_2" id="__nav_15_4_4_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/1.%20Por%20qu%C3%A9%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Por qué Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/2.%20Fundamentos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Fundamentos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/3.%20Protocolos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Protocolos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/4.%20Todo%20sobre%20los%20usuarios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Todo sobre los usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_4" id="__nav_15_4_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15_4_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a la programación en Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_4_2" id="__nav_15_4_4_2_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15_4_4_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Introduccion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Componentes%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Componentes de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Control%20de%20secuencias%20de%20comandos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de secuencias de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Flujo%20de%20ejecuci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Revalidate
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Revalidate
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#captura-de-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Captura de información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validar información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arreglos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arreglos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escribiendo-en-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escribiendo en archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectura-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lectura de Archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-ifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es IFS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empaquetamiento-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Empaquetamiento de archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-tar-empaquetado-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. tar: Empaquetado de archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. tar: Empaquetado de archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos comunes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gzip-compresion-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. gzip: Compresión de archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. gzip: Compresión de archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-comunes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos comunes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pbzip2-compresion-paralela" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. pbzip2: Compresión paralela
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. pbzip2: Compresión paralela">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-comunes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos comunes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-usar-tar-con-compresion-integrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Usar tar con compresión integrada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Usar tar con compresión integrada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empaquetar-y-comprimir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Empaquetar y comprimir:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraer-archivos-comprimidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extraer archivos comprimidos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-herramientas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación de herramientas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-practico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfiriendo-informacion-por-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfiriendo información por la Red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync-sincronizacion-y-copia-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      rsync: Sincronización y Copia de Archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principales-caracteristicas-de-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principales características de rsync
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos básicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones útiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos avanzados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-rsync-frente-a-otros-metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de rsync frente a otros métodos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casos-de-uso-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de uso comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-practico-para-respaldo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando práctico para respaldo completo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo DB
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_5" id="__nav_15_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Htb commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_5">
+            <span class="md-nav__icon md-icon"></span>
+            Htb commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../htb-commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMANDOS UTILIZADOS DURANTE LA PRACTICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../htb-commands/SUMMARY/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_5_3" id="__nav_15_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratorios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../htb-commands/laboratorios/laboratorio-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    laboratorio 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_6" id="__nav_15_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_6">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../labs/1.%20punto%20de%20partida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aprenda los conceptos básicos de las pruebas de penetración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../labs/Helper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_6_3" id="__nav_15_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier I
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tier I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../labs/Tier%20I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_7" id="__nav_15_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proceso de aprendisaje
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_7">
+            <span class="md-nav__icon md-icon"></span>
+            Proceso de aprendisaje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../proceso%20de%20aprendisaje/1.%20Mentalidad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Mentalidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../proceso%20de%20aprendisaje/2.%20Dependencias%20de%20aprendizaje/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Dependencias de aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../proceso%20de%20aprendisaje/3.%20Descripci%C3%B3n%20general%20del%20aprendizaje/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Descripción general del aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../proceso%20de%20aprendisaje/4.%20El%20proceso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. El proceso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software developer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Software developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/PROYECTOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/Programacio%CC%81n%20Funcional%20Con%20Java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programación Funcional Con Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/Software%20Exam%20Certification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Exam Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_5" id="__nav_16_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_5">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/git/CONVENTIONAL%20COMMIT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CONVENTIONAL COMMIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/git/Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/git/Hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6" id="__nav_16_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Patrones de diseño
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6">
+            <span class="md-nav__icon md-icon"></span>
+            Patrones de diseño
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_1" id="__nav_16_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Comportamiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Comportamiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/comportamiento/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_2" id="__nav_16_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Creacionales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Creacionales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/1%20Factory%20Method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Factory Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/2%20Abstract%20Factory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Abstract Factory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/3%20Builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/4%20Prototype/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Prototype
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/5%20Singleton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Singleton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patrones creacionales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_2_7" id="__nav_16_6_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_16_6_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ejercicios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/ejercicios/Builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    easy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_3" id="__nav_16_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Estructurales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Estructurales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../software-developer/patrones%20de%20dise%C3%B1o/estructurales/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#captura-de-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Captura de información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validar información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arreglos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arreglos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escribiendo-en-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escribiendo en archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectura-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lectura de Archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-ifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es IFS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empaquetamiento-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Empaquetamiento de archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-tar-empaquetado-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. tar: Empaquetado de archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. tar: Empaquetado de archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos comunes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gzip-compresion-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. gzip: Compresión de archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. gzip: Compresión de archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-comunes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos comunes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pbzip2-compresion-paralela" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. pbzip2: Compresión paralela
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. pbzip2: Compresión paralela">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-comunes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos comunes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-usar-tar-con-compresion-integrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Usar tar con compresión integrada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Usar tar con compresión integrada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empaquetar-y-comprimir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Empaquetar y comprimir:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraer-archivos-comprimidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extraer archivos comprimidos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-herramientas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación de herramientas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-practico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfiriendo-informacion-por-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfiriendo información por la Red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync-sincronizacion-y-copia-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      rsync: Sincronización y Copia de Archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principales-caracteristicas-de-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principales características de rsync
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos básicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones útiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos avanzados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-rsync-frente-a-otros-metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de rsync frente a otros métodos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casos-de-uso-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de uso comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-practico-para-respaldo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando práctico para respaldo completo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo DB
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Revalidate</h1>
+
+<h2 id="captura-de-informacion">Captura de información<a class="headerlink" href="#captura-de-informacion" title="Permanent link">&para;</a></h2>
+<p>La captura de información en <code>bash</code> lo logramos usando la palabra reservada <code>read</code>
+- <strong>-p</strong>: Permite ingresar una frase o <em>prompt</em> antes de pedir el dato. 
+- <strong>-s</strong>: Modo Sigiloso. No muestra ningún carácter en la terminal, util para contraseñas o información sensible. 
+- <strong>-n [num]</strong>: Permite leer como máximo n caracteres. 
+- <strong>-r</strong>: Toma el botón de retroceso o <em>backspace</em> como un carácter y no borra ningún otro carácter previamente escrito.
+<div class="language-bash highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Number a:&#39;</span>
+<span class="nb">read</span><span class="w"> </span>
+<span class="nv">number</span><span class="o">=</span><span class="nv">$REPLY</span>
+</code></pre></div></p>
+<h2 id="validar-informacion">Validar información<a class="headerlink" href="#validar-informacion" title="Permanent link">&para;</a></h2>
+<p>para validar información que llegamos a capturar podríamos utilizar los siguientes parámetros</p>
+<ul>
+<li>Para validar tamaños se utiliza el comando <code>read -n&lt;numero de caracteres&gt;</code></li>
+<li>Para validar tipos de datos se utiliza expresiones regulares
+<div class="language-bash highlight"><pre><span></span><code><span class="c1"># ! /bin/bash </span>
+<span class="c1"># Programa para ejemplificar como capturar la información del usuario utilizando el comando read </span>
+
+<span class="nv">option</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>
+<span class="nv">backupName</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Programa Utilidades Postgres&quot;</span><span class="w"> </span>
+<span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingresar una opción:&quot;</span><span class="w"> </span>option<span class="w"> </span>
+<span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingresar el nombre del archivo del backup:&quot;</span><span class="w"> </span>
+backupName<span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Opción:</span><span class="nv">$option</span><span class="s2"> , backupName:</span><span class="nv">$backupName</span><span class="s2">&quot;</span>
+</code></pre></div></li>
+</ul>
+<h2 id="arreglos">Arreglos<a class="headerlink" href="#arreglos" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span class="c1"># ! /bin/bash </span>
+<span class="c1"># Programa para ejemplificar el uso de los arreglos </span>
+
+<span class="nv">arregloNumeros</span><span class="o">=(</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="o">)</span><span class="w"> </span>
+<span class="nv">arregloCadenas</span><span class="o">=(</span>Marco,<span class="w"> </span>Antonio,<span class="w"> </span>Pedro,<span class="w"> </span>Susana<span class="o">)</span><span class="w"> </span>
+<span class="nv">arregloRangos</span><span class="o">=({</span>A..Z<span class="o">}</span><span class="w"> </span><span class="o">{</span><span class="m">10</span>..20<span class="o">})</span><span class="w"> </span>
+<span class="c1">#Imprimir todos los valores </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Arreglo de Números:</span><span class="si">${</span><span class="nv">arregloNumeros</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Arreglo de Cadenas:</span><span class="si">${</span><span class="nv">arregloCadenas</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Arreglo de Números:</span><span class="si">${</span><span class="nv">arregloRangos</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="c1">#Imprimir los tamaños de los arreglos </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tamaño Arreglo de Números:</span><span class="si">${#</span><span class="nv">arregloNumeros</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tamaño Arreglo de Cadenas:</span><span class="si">${#</span><span class="nv">arregloCadenas</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tamaño Arreglo de Números:</span><span class="si">${#</span><span class="nv">arregloRangos</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="c1">#Imprimir la posición 3 del arreglo de números, cadenas de rango </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Posición 3 Arreglo de Números:</span><span class="si">${</span><span class="nv">arregloNumeros</span><span class="p">[3]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Posición 3 Arreglo de Cadenas:</span><span class="si">${</span><span class="nv">arregloCadenas</span><span class="p">[3]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Posición 3 Arreglo de Rangos:</span><span class="si">${</span><span class="nv">arregloRangos</span><span class="p">[3]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="c1">#Añadir y eliminar valores en un arreglo </span>
+arregloNumeros<span class="o">[</span><span class="m">7</span><span class="o">]=</span><span class="m">20</span><span class="w"> </span>
+<span class="nb">unset</span><span class="w"> </span>arregloNumeros<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="c1"># elimina </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Arreglo de Números:</span><span class="si">${</span><span class="nv">arregloNumeros</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tamaño arreglo de Números:</span><span class="si">${#</span><span class="nv">arregloNumeros</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h2 id="menus">Menus<a class="headerlink" href="#menus" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># Programa para validar procesos, memoria, recursos, variables.</span>
+<span class="c1"># by: devp</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;**** PROGRAMA VALIDACIÓN RECURSOS ****&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="nv">opcion</span><span class="o">=</span><span class="m">0</span>
+
+<span class="k">while</span><span class="w"> </span>:
+<span class="k">do</span>
+<span class="w">    </span><span class="c1"># Limpiar Pantalla</span>
+<span class="w">    </span>clear
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot; * Menú Principal * &quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1) Procesos Actuales&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2) Memoria Disponible&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3) Espacio en disco&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4) Información Red&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;5) Variables de entorno configuradas&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;6) Información Programa&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;7) Comprimir Archivos SH&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;8) Salir&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="w">    </span><span class="c1"># Leer datos de usuario</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-n1<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingrese la opción a seleccionar (1 - 8): &quot;</span><span class="w"> </span>opcion
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="w">    </span><span class="c1"># Validar opción ingresada</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$opcion</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span><span class="m">1</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Procesos Actuales..&quot;</span>
+<span class="w">            </span>ps<span class="w"> </span>axu
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">2</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Memoria Disponible..&quot;</span>
+<span class="w">            </span>free
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">3</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Espacio en disco..&quot;</span>
+<span class="w">            </span>df<span class="w"> </span>-h
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">4</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Información Red..&quot;</span>
+<span class="w">            </span>ifconfig<span class="w"> </span>-a
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">5</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Variables de Entorno Configuradas..&quot;</span>
+<span class="w">            </span>printenv
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">6</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Información Programa..&quot;</span>
+<span class="w">            </span>dpkg<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>more
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">7</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Comprimendo Archivos..&quot;</span>
+<span class="w">            </span>tar<span class="w"> </span>-czvf<span class="w"> </span>archivosComprimidos.tar.gz<span class="w"> </span>*.sh
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n ¡Éxito!&quot;</span>
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">8</span><span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n..Saliendo, ¡¡Gracias!!&quot;</span>
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>*<span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nOpción no válida. Intente nuevamente.&quot;</span>
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">2</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="archivos">Archivos<a class="headerlink" href="#archivos" title="Permanent link">&para;</a></h2>
+<h3 id="escribiendo-en-archivos">Escribiendo en archivos<a class="headerlink" href="#escribiendo-en-archivos" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># Programa para ejemplificar cómo se escribe en un archivo.</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Escribir en un archivo&quot;</span>
+
+<span class="c1"># Escribir una línea en el archivo usando echo</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Valores escritos con el comando echo&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+
+<span class="c1"># Adición multilínea al archivo</span>
+cat<span class="w"> </span><span class="s">&lt;&lt;EOM &gt;&gt;&quot;$1&quot;</span>
+<span class="s">$2</span>
+<span class="s">EOM</span>
+</code></pre></div>
+<h3 id="lectura-de-archivos">Lectura de Archivos<a class="headerlink" href="#lectura-de-archivos" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># Programa para ejemplificar cómo se lee en un archivo.</span>
+<span class="c1"># Autor: Marco Toscano Freire - @martosfre</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Leer en un archivo&quot;</span>
+cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nAlmacenar los valores en una variable&quot;</span>
+<span class="nv">valorCat</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$valorCat</span><span class="s2">&quot;</span>
+
+<span class="c1"># Se utiliza la variable IFS (Internal Field Separator) para evitar que los espacios en blanco al inicio o al final se recorten.</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nLeer archivos línea por línea utilizando while&quot;</span>
+<span class="k">while</span><span class="w"> </span><span class="nv">IFS</span><span class="o">=</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>linea<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$linea</span><span class="s2">&quot;</span>
+<span class="k">done</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h3 id="que-es-ifs">¿Qué es IFS?<a class="headerlink" href="#que-es-ifs" title="Permanent link">&para;</a></h3>
+<p><code>IFS</code> (Internal Field Separator) es una variable de entorno en Bash que define los caracteres usados para dividir las palabras o líneas en los comandos de shell, especialmente cuando se procesan listas o archivos.</p>
+<ul>
+<li>
+<p><strong>Por defecto, IFS incluye:</strong><br />
+    Espacio ( ), tabulación (<code>\t</code>), y nueva línea (<code>\n</code>).</p>
+</li>
+<li>
+<p><strong>En este caso:</strong><br />
+    Al asignar <code>IFS=</code> antes de <code>read</code>, estamos deshabilitando temporalmente su comportamiento predeterminado, asegurándonos de que las líneas del archivo se lean exactamente como están, sin recortar espacios al principio o al final.</p>
+</li>
+</ul>
+<h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<p>Si <code>archivo.txt</code> contiene:</p>
+<div class="language-text highlight"><pre><span></span><code>    línea 1 
+línea 2   
+línea 3
+</code></pre></div>
+<p>Sin ajustar <code>IFS</code>, los espacios de las líneas serían ignorados:
+<div class="language-text highlight"><pre><span></span><code>línea 1 
+línea 2   
+línea 3
+</code></pre></div></p>
+<p>Con <code>IFS=</code>, se respetan los espacios en blanco:
+<div class="language-text highlight"><pre><span></span><code>    línea 1 
+línea 2   
+línea 3
+</code></pre></div></p>
+<h3 id="empaquetamiento-de-archivos">Empaquetamiento de archivos<a class="headerlink" href="#empaquetamiento-de-archivos" title="Permanent link">&para;</a></h3>
+<p>El empaquetado y compresión de archivos con herramientas como <code>tar</code>, <code>gzip</code> y <code>pbzip</code> son tareas comunes en sistemas Unix/Linux. Cada herramienta tiene un propósito y se usa en diferentes etapas del proceso. Aquí te lo explico:</p>
+<hr />
+<h3 id="1-tar-empaquetado-de-archivos">1. <strong><code>tar</code>: Empaquetado de archivos</strong><a class="headerlink" href="#1-tar-empaquetado-de-archivos" title="Permanent link">&para;</a></h3>
+<p><code>tar</code> (Tape Archive) empaqueta varios archivos y directorios en un único archivo, llamado "tarball". Este archivo no está comprimido, pero agrupa el contenido para facilitar su manejo.</p>
+<h4 id="comandos-comunes">Comandos comunes:<a class="headerlink" href="#comandos-comunes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Empaquetar archivos en un archivo <code>.tar</code>:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-cvf<span class="w"> </span>archivo.tar<span class="w"> </span>archivo1<span class="w"> </span>archivo2<span class="w"> </span>directorio/
+</code></pre></div>
+<ul>
+<li><code>-c</code>: Crear un archivo.</li>
+<li><code>-v</code>: Modo detallado (muestra el progreso).</li>
+<li><code>-f</code>: Especificar el nombre del archivo resultante.</li>
+<li><strong>Extraer el contenido de un archivo <code>.tar</code>:</strong></li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-xvf<span class="w"> </span>archivo.tar
+</code></pre></div>
+<ul>
+<li><code>-x</code>: Extraer contenido.</li>
+<li><strong>Listar el contenido de un archivo <code>.tar</code>:</strong></li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-tvf<span class="w"> </span>archivo.tar
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="2-gzip-compresion-de-archivos">2. <strong><code>gzip</code>: Compresión de archivos</strong><a class="headerlink" href="#2-gzip-compresion-de-archivos" title="Permanent link">&para;</a></h3>
+<p><code>gzip</code> comprime un archivo (puede ser un archivo tarball o cualquier archivo individual). La compresión se realiza de manera eficiente, aunque no aprovecha completamente procesadores multicore.</p>
+<h4 id="comandos-comunes_1">Comandos comunes:<a class="headerlink" href="#comandos-comunes_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Comprimir un archivo:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>gzip<span class="w"> </span>archivo.tar
+</code></pre></div>
+<p>Esto genera <code>archivo.tar.gz</code>.</p>
+</li>
+<li>
+<p><strong>Descomprimir un archivo:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>gzip<span class="w"> </span>-d<span class="w"> </span>archivo.tar.gz
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="3-pbzip2-compresion-paralela">3. <strong><code>pbzip2</code>: Compresión paralela</strong><a class="headerlink" href="#3-pbzip2-compresion-paralela" title="Permanent link">&para;</a></h3>
+<p><code>pbzip2</code> es una variante de <code>bzip2</code> que permite aprovechar múltiples núcleos del procesador para acelerar la compresión. Es útil para archivos grandes en sistemas modernos.</p>
+<h4 id="comandos-comunes_2">Comandos comunes:<a class="headerlink" href="#comandos-comunes_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Comprimir un archivo:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>pbzip2<span class="w"> </span>archivo.tar
+</code></pre></div>
+<p>Esto genera <code>archivo.tar.bz2</code>.</p>
+</li>
+<li>
+<p><strong>Descomprimir un archivo:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>pbzip2<span class="w"> </span>-d<span class="w"> </span>archivo.tar.bz2
+</code></pre></div>
+</li>
+<li>
+<p><strong>Controlar el número de núcleos usados:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>pbzip2<span class="w"> </span>-p8<span class="w"> </span>archivo.tar
+</code></pre></div>
+<p>Usa 8 núcleos para la compresión.</p>
+</li>
+</ul>
+<hr />
+<h3 id="4-usar-tar-con-compresion-integrada">4. <strong>Usar <code>tar</code> con compresión integrada</strong><a class="headerlink" href="#4-usar-tar-con-compresion-integrada" title="Permanent link">&para;</a></h3>
+<p><code>tar</code> puede trabajar directamente con <code>gzip</code>, <code>bzip2</code>, o <code>pbzip2</code>, evitando pasos adicionales.</p>
+<h4 id="empaquetar-y-comprimir">Empaquetar y comprimir:<a class="headerlink" href="#empaquetar-y-comprimir" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Con <code>gzip</code>:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-cvzf<span class="w"> </span>archivo.tar.gz<span class="w"> </span>archivo1<span class="w"> </span>archivo2<span class="w"> </span>directorio/
+</code></pre></div>
+<ul>
+<li><code>-z</code>: Usa <code>gzip</code> para comprimir.</li>
+<li><strong>Con <code>pbzip2</code>:</strong></li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-cvjf<span class="w"> </span>archivo.tar.bz2<span class="w"> </span>archivo1<span class="w"> </span>archivo2<span class="w"> </span>directorio/
+</code></pre></div>
+<ul>
+<li><code>-j</code>: Usa <code>bzip2</code> o su variante <code>pbzip2</code>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="extraer-archivos-comprimidos">Extraer archivos comprimidos:<a class="headerlink" href="#extraer-archivos-comprimidos" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Con <code>gzip</code>:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-xvzf<span class="w"> </span>archivo.tar.gz
+</code></pre></div>
+</li>
+<li>
+<p><strong>Con <code>pbzip2</code>:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-xvjf<span class="w"> </span>archivo.tar.bz2
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="comparacion-de-herramientas">Comparación de herramientas<a class="headerlink" href="#comparacion-de-herramientas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Herramienta</th>
+<th>Velocidad</th>
+<th>Compresión</th>
+<th>Multinúcleo</th>
+<th>Extensión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tar</code></td>
+<td>Rápido</td>
+<td>No aplica</td>
+<td>No</td>
+<td><code>.tar</code></td>
+</tr>
+<tr>
+<td><code>gzip</code></td>
+<td>Rápido</td>
+<td>Media</td>
+<td>No</td>
+<td><code>.gz</code></td>
+</tr>
+<tr>
+<td><code>pbzip2</code></td>
+<td>Más lento</td>
+<td>Alta</td>
+<td>Sí</td>
+<td><code>.bz2</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Empaquetar y comprimir con <code>pbzip2</code>:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-cvjf<span class="w"> </span>archivos.tar.bz2<span class="w"> </span>archivo1<span class="w"> </span>archivo2<span class="w"> </span>directorio/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Extraer el archivo comprimido:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>tar<span class="w"> </span>-xvjf<span class="w"> </span>archivos.tar.bz2
+</code></pre></div>
+</li>
+</ol>
+<p>ahora para garantizar la seguridad de la compresión de archivos podemos utilizar <code>zip</code>, esto a traves del parámetro <code>-e</code> no permite darle un clave de seguridad.</p>
+<h3 id="transfiriendo-informacion-por-la-red">Transfiriendo información por la <code>Red</code><a class="headerlink" href="#transfiriendo-informacion-por-la-red" title="Permanent link">&para;</a></h3>
+<p>para esto utilizaremos <a href="[Sincronización a fondo con rsync en Ubuntu, Linux Mint y derivados - atareao con Linux](https://atareao.es/software-linux/sincronizacion-a-fondo-con-rsync/)">rzync</a></p>
+<h3 id="rsync-sincronizacion-y-copia-de-archivos"><strong><code>rsync</code>: Sincronización y Copia de Archivos</strong><a class="headerlink" href="#rsync-sincronizacion-y-copia-de-archivos" title="Permanent link">&para;</a></h3>
+<p><code>rsync</code> es una poderosa herramienta de línea de comandos en Linux/Unix para sincronizar y copiar archivos o directorios entre sistemas locales y remotos. Es eficiente porque solo transfiere los datos que han cambiado, minimizando el uso del ancho de banda y el tiempo de transferencia.</p>
+<hr />
+<h3 id="principales-caracteristicas-de-rsync"><strong>Principales características de <code>rsync</code></strong><a class="headerlink" href="#principales-caracteristicas-de-rsync" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Sincronización incremental</strong>: Solo transfiere los cambios entre los archivos fuente y destino.</li>
+<li><strong>Compresión</strong>: Usa compresión durante la transferencia para ahorrar ancho de banda.</li>
+<li><strong>Transferencias seguras</strong>: Puede usar SSH para transferir datos de manera segura.</li>
+<li><strong>Versatilidad</strong>: Funciona localmente o entre servidores remotos.</li>
+<li><strong>Preservación de atributos</strong>: Conserva permisos, propietarios, marcas de tiempo, etc.</li>
+</ol>
+<hr />
+<h3 id="comandos-basicos"><strong>Comandos básicos</strong><a class="headerlink" href="#comandos-basicos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Sincronizar un directorio localmente:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>/ruta/origen/<span class="w"> </span>/ruta/destino/
+</code></pre></div>
+<ul>
+<li><code>-a</code>: Modo archivo, preserva atributos como permisos y marcas de tiempo.</li>
+<li><code>-v</code>: Modo detallado, muestra la salida.</li>
+<li><strong>Sincronizar a un servidor remoto:</strong></li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuario@servidor:/ruta/destino/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Sincronizar desde un servidor remoto:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>usuario@servidor:/ruta/origen/<span class="w"> </span>/ruta/destino/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Eliminar archivos en el destino que no estén en el origen:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>--delete<span class="w"> </span>/ruta/origen/<span class="w"> </span>/ruta/destino/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Comprimir datos durante la transferencia:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-avz<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuario@servidor:/ruta/destino/
+</code></pre></div>
+<ul>
+<li><code>-z</code>: Habilita la compresión.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="opciones-utiles"><strong>Opciones útiles</strong><a class="headerlink" href="#opciones-utiles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-a</code></td>
+<td>Preserva permisos, propietarios, grupos, marcas de tiempo, y enlaces simbólicos.</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Muestra detalles de los archivos sincronizados.</td>
+</tr>
+<tr>
+<td><code>-z</code></td>
+<td>Comprime los datos durante la transferencia.</td>
+</tr>
+<tr>
+<td><code>--delete</code></td>
+<td>Elimina archivos en el destino que no existen en el origen.</td>
+</tr>
+<tr>
+<td><code>-e ssh</code></td>
+<td>Usa SSH para la transferencia segura.</td>
+</tr>
+<tr>
+<td><code>--progress</code></td>
+<td>Muestra el progreso de la transferencia.</td>
+</tr>
+<tr>
+<td><code>--exclude</code></td>
+<td>Excluye ciertos archivos o directorios (pueden usarse comodines).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="ejemplos-avanzados"><strong>Ejemplos avanzados</strong><a class="headerlink" href="#ejemplos-avanzados" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Sincronizar con progreso y compresión:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-avz<span class="w"> </span>--progress<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuario@servidor:/ruta/destino/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Excluir ciertos archivos o directorios:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>--exclude<span class="o">=</span><span class="s2">&quot;*.tmp&quot;</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s2">&quot;carpeta_ignorar/&quot;</span><span class="w"> </span>/ruta/origen/<span class="w"> </span>/ruta/destino/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Sincronizar entre servidores remotos:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>usuario1@servidor1:/ruta/origen/<span class="w"> </span>usuario2@servidor2:/ruta/destino/
+</code></pre></div>
+</li>
+<li>
+<p><strong>Crear copias de respaldo incrementales:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>--delete<span class="w"> </span>/ruta/origen/<span class="w"> </span>/ruta/backup/
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h3 id="ventajas-de-rsync-frente-a-otros-metodos"><strong>Ventajas de <code>rsync</code> frente a otros métodos</strong><a class="headerlink" href="#ventajas-de-rsync-frente-a-otros-metodos" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Incremental</strong>: Solo transfiere los cambios.</li>
+<li><strong>Velocidad</strong>: Usando compresión (<code>-z</code>), reduce el tiempo de transferencia.</li>
+<li><strong>Versatilidad</strong>: Compatible con copias locales y remotas.</li>
+<li><strong>Seguridad</strong>: Usa SSH (<code>-e ssh</code>) para transferencias seguras.</li>
+</ol>
+<hr />
+<h3 id="casos-de-uso-comunes"><strong>Casos de uso comunes</strong><a class="headerlink" href="#casos-de-uso-comunes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Hacer copias de seguridad locales o remotas.</strong></li>
+<li><strong>Sincronizar datos entre servidores en tiempo real.</strong></li>
+<li><strong>Migrar directorios grandes entre sistemas.</strong></li>
+<li><strong>Mantener directorios espejo en múltiples ubicaciones.</strong></li>
+</ol>
+<hr />
+<h3 id="comando-practico-para-respaldo-completo"><strong>Comando práctico para respaldo completo</strong><a class="headerlink" href="#comando-practico-para-respaldo-completo" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code>rsync<span class="w"> </span>-avz<span class="w"> </span>--delete<span class="w"> </span>--progress<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>/home/usuario/<span class="w"> </span>usuario@servidor:/backup/usuario/
+</code></pre></div>
+<p>Este comando:</p>
+<ol>
+<li><strong>Sincroniza</strong> el directorio <code>/home/usuario/</code> con la carpeta <code>/backup/usuario/</code> en el servidor remoto.</li>
+<li>Usa <strong>compresión</strong> (<code>-z</code>) y <strong>elimina</strong> (<code>--delete</code>) archivos obsoletos en el destino.</li>
+<li>Transfiere de forma <strong>segura</strong> mediante SSH (<code>-e ssh</code>).</li>
+</ol>
+<hr />
+<h3 id="ejemplo-db">Ejemplo DB<a class="headerlink" href="#ejemplo-db" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># Programa que permite manejar las utilidades de Postgres</span>
+
+<span class="nv">opcion</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">fechaActual</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
+
+<span class="c1"># Función para instalar Postgres</span>
+instalar_postgres<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nVerificar instalación de Postgres...&quot;</span>
+<span class="w">    </span><span class="nv">verifyInstall</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>psql<span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nPostgres ya está instalado en el equipo.&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-s<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingrese contraseña de sudo: &quot;</span><span class="w"> </span>password
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-s<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingrese contraseña para Postgres: &quot;</span><span class="w"> </span>passwordPostgres
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>apt<span class="w"> </span>update
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>postgresql<span class="w"> </span>postgresql-contrib
+<span class="w">        </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;ALTER USER postgres WITH PASSWORD &#39;</span><span class="nv">$passwordPostgres</span><span class="s2">&#39;;&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql.service
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>postgresql.service
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-s<span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;PRESIONE [ENTER] para continuar...&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># Función para desinstalar Postgres</span>
+desinstalar_postgres<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-s<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingrese contraseña de sudo: &quot;</span><span class="w"> </span>password
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>postgresql.service
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>--purge<span class="w"> </span>remove<span class="w"> </span>postgresql<span class="se">\*</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/etc/postgresql
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/etc/postgresql-common
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/var/lib/postgresql
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span>postgres
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>groupdel<span class="w"> </span>postgresql
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-s<span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;PRESIONE [ENTER] para continuar...&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># Función para sacar un respaldo</span>
+sacar_respaldo<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Listar las bases de datos:&quot;</span>
+<span class="w">    </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;\l&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elija la base de datos a respaldar: &quot;</span><span class="w"> </span>bddRespaldo
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Estableciendo permisos al directorio...&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$password</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-S<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="nv">$1</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Realizando respaldo...&quot;</span>
+<span class="w">        </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>pg_dump<span class="w"> </span>-Fc<span class="w"> </span><span class="nv">$bddRespaldo</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">/bddRespaldo_</span><span class="nv">$fechaActual</span><span class="s2">.bak&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Respaldo realizado correctamente en la ubicación: </span><span class="nv">$1</span><span class="s2">/bddRespaldo_</span><span class="nv">$fechaActual</span><span class="s2">.bak&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El directorio </span><span class="nv">$1</span><span class="s2"> no existe.&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-s<span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;PRESIONE [ENTER] para continuar...&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># Función para restaurar un respaldo</span>
+restaurar_respaldo<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Listar respaldos disponibles:&quot;</span>
+<span class="w">    </span>ls<span class="w"> </span>-1<span class="w"> </span><span class="nv">$1</span>/*.bak
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elija el respaldo a restaurar: &quot;</span><span class="w"> </span>respaldoRestaurar
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingrese el nombre de la base de datos destino: &quot;</span><span class="w"> </span>bddDestino
+<span class="w">    </span><span class="nv">verifyBdd</span><span class="o">=</span><span class="k">$(</span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-lqt<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="se">\|</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-wq<span class="w"> </span><span class="nv">$bddDestino</span><span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Restaurando en la base de datos destino: </span><span class="nv">$bddDestino</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;CREATE DATABASE </span><span class="nv">$bddDestino</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$respaldoRestaurar</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Restaurando respaldo...&quot;</span>
+<span class="w">        </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>pg_restore<span class="w"> </span>-Fc<span class="w"> </span>-d<span class="w"> </span><span class="nv">$bddDestino</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$respaldoRestaurar</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Listando las bases de datos:&quot;</span>
+<span class="w">        </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;\l&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El respaldo </span><span class="nv">$respaldoRestaurar</span><span class="s2"> no existe.&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-s<span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;PRESIONE [ENTER] para continuar...&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># Menú principal</span>
+<span class="k">while</span><span class="w"> </span>:<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>clear
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;_________________________________________&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PGUTIL - Programa de Utilidad de Postgres&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;_________________________________________&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;                MENÚ PRINCIPAL           &quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;_________________________________________&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1. Instalar Postgres&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2. Desinstalar Postgres&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3. Sacar un respaldo&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Restaurar respaldo&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;5. Salir&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;_________________________________________&quot;</span>
+
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-n1<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Ingrese una opción [1-5]: &quot;</span><span class="w"> </span>opcion
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$opcion</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="m">1</span><span class="o">)</span>
+<span class="w">        </span>instalar_postgres
+<span class="w">        </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="m">2</span><span class="o">)</span>
+<span class="w">        </span>desinstalar_postgres
+<span class="w">        </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="m">3</span><span class="o">)</span>
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Directorio para el respaldo: &quot;</span><span class="w"> </span>directorioBackup
+<span class="w">        </span>sacar_respaldo<span class="w"> </span><span class="nv">$directorioBackup</span>
+<span class="w">        </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="m">4</span><span class="o">)</span>
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Directorio de respaldos: &quot;</span><span class="w"> </span>directorioRespaldos
+<span class="w">        </span>restaurar_respaldo<span class="w"> </span><span class="nv">$directorioRespaldos</span>
+<span class="w">        </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="m">5</span><span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Saliendo del programa...&quot;</span>
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Opción no válida. Intente de nuevo.&quot;</span>
+<span class="w">        </span>sleep<span class="w"> </span><span class="m">2</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="k">done</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 by K3V1N 117
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "content.code.highlight"], "search": "../../../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

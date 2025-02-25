@@ -1,0 +1,5847 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1%20Configuraci%C3%B3n%20b%C3%A1sica%20de%20dispositivos/">
+      
+      
+        <link rel="next" href="../3%20VLANs/">
+      
+      
+      <link rel="icon" href="../../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>2 Conceptos de switching - learning hub of the future</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/custom_htb.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="learning hub of the future" class="md-header__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            learning hub of the future
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Conceptos de switching
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="learning hub of the future" class="md-nav__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    learning hub of the future
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../PROYECTO%20SIS-414/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTO SIS 414
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../PYTHON%20CERTIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PYTHON CERTIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Palabras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palabras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../obsidian_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obsidian compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitecto DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../DevOps/Arquitecto%20DevOps/Arquitecto%20DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../DevOps/Azure/AZ-400%20Desarrollo%20para%20DevOps%20empresarial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ 400 Desarrollo para DevOps empresarial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../DevOps/Azure/AZ-400%20EXPLORACION%20DE%20ENLACES%20DE%20GIT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a los enlaces de Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Github actions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Github actions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../DevOps/github-actions/GitHub%20Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aspectos básicos de la implementación automatizada de aplicaciones con GitHub Actions y GitHub Pages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMARIO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMARIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../DevOps/github-actions/TEMARIO/Gu%C3%ADa%201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación de un flujo de trabajo con GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/Learn%20AI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ANEXOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            ANEXOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/ANEXOS/ai-mastery-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta Definitiva para Dominar la Inteligencia Artificial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/ANEXOS/future-learning-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Mejorada: Presente y Futuro de IA y Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/ANEXOS/learning-roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Integral en Ciencia de Datos, IA y MLOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo de Apps con LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Desarrollo%20de%20Apps%20con%20LLMs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Embeddings%20y%20Bases%20de%20Datos%20Vectoriales%20para%20NLP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embeddings y Bases de Datos Vectoriales para NLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Backend hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Backend hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../backend-hub/Generadores%20en%20JavaScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El poder de function* y yield
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../backend-hub/Graphql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Closures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../backend-hub/closures/Profundizando%20en%20Middlewares%20y%20Closures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profundizando en Middlewares y Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../backend-hub/closures/closures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cisco academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Cisco academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CCNA 2 v7
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            CCNA 2 v7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1" id="__nav_11_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_1" id="__nav_11_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Configuraci%C3%B3n%20b%C3%A1sica%20de%20dispositivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Configuración básica de dispositivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2 Conceptos de switching
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2 Conceptos de switching
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-deberia-tomar-este-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué debería tomar este módulo?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-aprendere-en-este-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué aprenderé en este módulo?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reenvio-de-tramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reenvío de tramas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reenvío de tramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-en-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching en la red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-de-direcciones-mac-del-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla de direcciones MAC del switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-aprender-y-reenviar-del-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      El método Aprender y Reenviar del Switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-reenvio-del-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos de reenvío del switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intercambio-de-almacenamiento-y-reenvio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intercambio de almacenamiento y reenvío
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-por-metodo-de-corte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching por método de corte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dominios-de-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominios de switching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dominios de switching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dominios-de-colisiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominios de colisiones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominios-de-difusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominios de difusión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alivio-de-la-congestion-en-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alivio de la congestión en la red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifique-su-comprension-cambiar-dominios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifique su comprensión - Cambiar dominios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica-del-modulo-y-cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Práctica del módulo y cuestionario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Práctica del módulo y cuestionario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-aprendere-en-este-modulo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué aprenderé en este módulo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prueba-del-modulo-conceptos-de-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prueba del módulo: conceptos de switches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20VLANs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 VLANs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Inter-VLAN%20Routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Inter VLAN Routing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2" id="__nav_11_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 5   6 Redes Redundantes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 5   6 Redes Redundantes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2_1" id="__nav_11_2_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1 CONCEPTOS STP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_11_2_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            1 CONCEPTOS STP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/1%20Prop%C3%B3sito%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Propósito del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/2%20Funcionamientos%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Funcionamientos del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes_Redundantes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_2_2" id="__nav_11_2_1_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2 EtherChannel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_11_2_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 EtherChannel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/1.%20Funcionamiento%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Funcionamiento de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/2.%20Configuraci%C3%B3n%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/3.%20Verificaci%C3%B3n%20y%20soluci%C3%B3n%20de%20problemas%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verificación y solución de problemas de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/Pr%C3%A1ctica%20del%20m%C3%B3dulo%20y%20cuestionario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica del módulo y cuestionario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2_1_3" id="__nav_11_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos 7   9 Redes Disponibles y Confiables
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_11_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 7   9 Redes Disponibles y Confiables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../M%C3%B3dulos%207%20-%209%20Redes%20Disponibles%20y%20Confiables/7%20DHCPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Competitive programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Competitive programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../competitive-programming/ICPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../competitive-programming/Sieve%20of%20Eratosthenes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sieve of Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ctf agetic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Ctf agetic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ctf-agetic/criptograf%C3%ADa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sql injection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sql injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ctf-agetic/sql%20injection/commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            English academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../english-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../english-academy/Tiempos%20Verbales/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiempos Verbales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../english-academy/VERBOS%20REGULARES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HOMEWORK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_4">
+            <span class="md-nav__icon md-icon"></span>
+            HOMEWORK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../english-academy/HOMEWORK/VERBOS%20REGULARES%20E%20IRREGULARES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES E IRREGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Htb academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            Htb academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_2" id="__nav_15_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Nmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_3" id="__nav_15_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_3">
+            <span class="md-nav__icon md-icon"></span>
+            Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/Jobs/Ingeniero%20de%20contenido/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ingeniero de contenido
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4" id="__nav_15_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MODULOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4">
+            <span class="md-nav__icon md-icon"></span>
+            MODULOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_1" id="__nav_15_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ATAQUES DEL LADO DEL SERVIDOR
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            ATAQUES DEL LADO DEL SERVIDOR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/ATAQUES%20DEL%20LADO%20DEL%20SERVIDOR/Ataques%20del%20lado%20del%20servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ataques del lado del servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_2" id="__nav_15_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Enumeración de host
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evasión de firewalls e IDS/IPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/ENUMERACION%20DE%20REDES%20CON%20NMAP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ENUMERACION DE REDES CON NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_3" id="__nav_15_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_3_2" id="__nav_15_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4" id="__nav_15_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TIER 0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            TIER 0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/Login%20Brute%20Forcing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Login Brute Forcing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2" id="__nav_15_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_1" id="__nav_15_4_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_1_2" id="__nav_15_4_4_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_2" id="__nav_15_4_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            INTRODUCCION A LA CREACION DE REDES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_2_2" id="__nav_15_4_4_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/1%20Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descripción general de la red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/2%20Estructura%20de%20la%20red/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/3%20Flujo%20de%20trabajo%20de%20redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelos de redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_3" id="__nav_15_4_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/Introducci%C3%B3n%20a%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_3_2" id="__nav_15_4_4_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/1.%20Por%20qu%C3%A9%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Por qué Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/2.%20Fundamentos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Fundamentos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/3.%20Protocolos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Protocolos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/4.%20Todo%20sobre%20los%20usuarios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Todo sobre los usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_4" id="__nav_15_4_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_15_4_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a la programación en Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4_4_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_4_4_2_4_2" id="__nav_15_4_4_2_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_15_4_4_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4_4_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/1.%20Introduccion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/2.%20Componentes%20de%20trabajo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Componentes de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/3.%20Control%20de%20secuencias%20de%20comandos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de secuencias de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/4.%20Flujo%20de%20ejecuci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/Revalidate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revalidate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_5" id="__nav_15_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Htb commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_5">
+            <span class="md-nav__icon md-icon"></span>
+            Htb commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/htb-commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMANDOS UTILIZADOS DURANTE LA PRACTICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/htb-commands/SUMMARY/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_5_3" id="__nav_15_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratorios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/htb-commands/laboratorios/laboratorio-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    laboratorio 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_6" id="__nav_15_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_6">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/labs/1.%20punto%20de%20partida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aprenda los conceptos básicos de las pruebas de penetración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/labs/Helper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_6_3" id="__nav_15_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier I
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_15_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tier I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/labs/Tier%20I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_7" id="__nav_15_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proceso de aprendisaje
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_7">
+            <span class="md-nav__icon md-icon"></span>
+            Proceso de aprendisaje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/proceso%20de%20aprendisaje/1.%20Mentalidad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Mentalidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/proceso%20de%20aprendisaje/2.%20Dependencias%20de%20aprendizaje/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Dependencias de aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/proceso%20de%20aprendisaje/3.%20Descripci%C3%B3n%20general%20del%20aprendizaje/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Descripción general del aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../htb-academy/proceso%20de%20aprendisaje/4.%20El%20proceso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. El proceso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software developer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Software developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/PROYECTOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/Programacio%CC%81n%20Funcional%20Con%20Java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programación Funcional Con Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/Software%20Exam%20Certification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Exam Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_5" id="__nav_16_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_5">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/git/CONVENTIONAL%20COMMIT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CONVENTIONAL COMMIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/git/Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/git/Hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6" id="__nav_16_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Patrones de diseño
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6">
+            <span class="md-nav__icon md-icon"></span>
+            Patrones de diseño
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_1" id="__nav_16_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Comportamiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Comportamiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/comportamiento/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_2" id="__nav_16_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Creacionales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Creacionales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/1%20Factory%20Method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Factory Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/2%20Abstract%20Factory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Abstract Factory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/3%20Builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/4%20Prototype/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Prototype
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/5%20Singleton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Singleton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patrones creacionales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_2_7" id="__nav_16_6_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_16_6_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ejercicios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/creacionales/ejercicios/Builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    easy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_6_3" id="__nav_16_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Estructurales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_16_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Estructurales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software-developer/patrones%20de%20dise%C3%B1o/estructurales/APENDICE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-deberia-tomar-este-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué debería tomar este módulo?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-aprendere-en-este-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué aprenderé en este módulo?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reenvio-de-tramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reenvío de tramas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reenvío de tramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-en-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching en la red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-de-direcciones-mac-del-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla de direcciones MAC del switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-metodo-aprender-y-reenviar-del-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      El método Aprender y Reenviar del Switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-reenvio-del-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos de reenvío del switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intercambio-de-almacenamiento-y-reenvio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intercambio de almacenamiento y reenvío
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-por-metodo-de-corte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching por método de corte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dominios-de-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominios de switching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dominios de switching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dominios-de-colisiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominios de colisiones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominios-de-difusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominios de difusión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alivio-de-la-congestion-en-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alivio de la congestión en la red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifique-su-comprension-cambiar-dominios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifique su comprensión - Cambiar dominios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica-del-modulo-y-cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Práctica del módulo y cuestionario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Práctica del módulo y cuestionario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-aprendere-en-este-modulo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué aprenderé en este módulo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prueba-del-modulo-conceptos-de-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prueba del módulo: conceptos de switches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>2.0.1</p>
+<h2 id="por-que-deberia-tomar-este-modulo">¿Por qué debería tomar este módulo?<a class="headerlink" href="#por-que-deberia-tomar-este-modulo" title="Permanent link">&para;</a></h2>
+<p>¡Bienvenido a conceptos de Switching!</p>
+<p>Puede conectar y configurar switches, ¡eso es genial!. Pero incluso una red con la tecnología más reciente desarrolla sus propios problemas eventualmente. Si tiene que solucionar problemas de la red, necesita saber cómo funcionan los switches. Este módulo le proporciona los fundamentos de los switches y su funcionamiento. Por suerte, el funcionamiento del switch es fácil de entender.</p>
+<p>2.0.2</p>
+<h2 id="que-aprendere-en-este-modulo">¿Qué aprenderé en este módulo?<a class="headerlink" href="#que-aprendere-en-este-modulo" title="Permanent link">&para;</a></h2>
+<p><strong>Título del módulo:</strong> Conceptos de switching</p>
+<p><strong>Objetivos del módulo</strong>: Explique cómo los switches de capa 2 reenvían datos.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Título del tema</strong></th>
+<th><strong>Objetivo del tema</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reenvío de tramas</strong></td>
+<td>Explique la forma en la que las tramas se reenvían en una red conmutada.</td>
+</tr>
+<tr>
+<td><strong>Dominios de switching</strong></td>
+<td>Compare un dominio de colisión con un dominio de difusión.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="reenvio-de-tramas">Reenvío de tramas<a class="headerlink" href="#reenvio-de-tramas" title="Permanent link">&para;</a></h1>
+<p>2.1.1</p>
+<h2 id="switching-en-la-red">Switching en la red<a class="headerlink" href="#switching-en-la-red" title="Permanent link">&para;</a></h2>
+<p>El concepto de switching y reenvío de tramas es universal en la tecnología de redes y en las telecomunicaciones. En las redes LAN, WAN y en la red pública de telefonía conmutada (PSTN), se usan diversos tipos de switches.</p>
+<p>La decisión sobre cómo un switch reenvía el tráfico se toma en relación con el flujo de ese tráfico. Hay dos términos asociados a las tramas que entran y salen de una interfaz:</p>
+<ul>
+<li><strong>Entrada</strong> - Este término se usa para describir el puerto por donde una trama ingresa al dispositivo.</li>
+<li><strong>Salida</strong> - Este término se usa para describir el puerto que las tramas utilizarán al salir del dispositivo.</li>
+</ul>
+<p>Un switch LAN mantiene una tabla a la que hace referencia al reenviar tráfico a través del switch. La única inteligencia de un switch LAN es su capacidad de usar su tabla para reenviar tráfico. Un switch LAN reenvía tráfico basado en el puerto de entrada y la dirección MAC de destino de una trama Ethernet. Con un switch LAN, hay solamente una tabla de switching principal que describe una asociación estricta entre las direcciones MAC y los puertos; por lo tanto, una trama Ethernet con una dirección de destino determinada siempre sale por el mismo puerto de salida, independientemente del puerto de entrada por el que ingresa.</p>
+<p><strong>Nota</strong>: Una trama Ethernet nunca se reenviará fuera del mismo puerto en el que se recibió.</p>
+<p>Haga clic en el botón Reproducir para ver una animación del proceso de switching.</p>
+<p>![[Pasted image 20241212111012.png]]
+Tabla de puertos</p>
+<table>
+<thead>
+<tr>
+<th>Direcciones de destino</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EE</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AA</td>
+<td>2</td>
+</tr>
+<tr>
+<td>BA</td>
+<td>3</td>
+</tr>
+<tr>
+<td>EA</td>
+<td>4</td>
+</tr>
+<tr>
+<td>AC</td>
+<td>5</td>
+</tr>
+<tr>
+<td>AB</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>2.1.2</p>
+<h2 id="tabla-de-direcciones-mac-del-switch">Tabla de direcciones MAC del switch<a class="headerlink" href="#tabla-de-direcciones-mac-del-switch" title="Permanent link">&para;</a></h2>
+<p>Un switch se compone de circuitos integrados y del software complementario que controla las rutas de datos a través del switch. Los switches usan direcciones MAC de destino para dirigir las comunicaciones de red a través del switch, fuera del puerto apropiado, hacia el destino.</p>
+<p>Para definir qué puerto usar para transmitir una trama, el switch primero debe saber qué dispositivos existen en cada puerto. A medida que el switch aprende la relación de los puertos con los dispositivos, construye una tabla llamada tabla de direcciones MAC. Esta tabla se almacena en la Memoria de Contenido Direccionable (Content-Addressable Memory, CAM), la cual es un tipo especial de memoria utilizada en aplicaciones de búsqueda de alta velocidad. Por esta razón, la tabla de direcciones MAC a veces también se denomina tabla CAM.</p>
+<p>Los switches LAN determinan cómo manejar las tramas de datos entrantes manteniendo la tabla de direcciones MAC. Un switch llena su tabla de direcciones MAC al registrar la dirección MAC de origen de cada dispositivo conectado a cada uno de sus puertos. El switch hace referencia a la información en la tabla de direcciones MAC para enviar tramas destinadas a un dispositivo específico fuera del puerto que se ha asignado a ese dispositivo.</p>
+<p>2.1.3</p>
+<h2 id="el-metodo-aprender-y-reenviar-del-switch">El método Aprender y Reenviar del Switch<a class="headerlink" href="#el-metodo-aprender-y-reenviar-del-switch" title="Permanent link">&para;</a></h2>
+<p>El siguiente proceso de dos pasos se realiza para cada trama de Ethernet que ingresa a un switch.</p>
+<p><strong>Paso 1. Aprender - Examinando la dirección Origen MAC</strong></p>
+<p>Se revisa cada trama que ingresa a un switch para obtener información nueva. Esto se realiza examinando la dirección MAC de origen de la trama y el número de puerto por el que ingresó al switch.</p>
+<ul>
+<li>Si la dirección MAC de origen no existe en la tabla de direcciones MAC, la dirección MAC y el número de puerto entrante son agregados a la tabla.</li>
+<li>Si la dirección MAC de origen existe, el switch actualiza el temporizador para esa entrada. De manera predeterminada, la mayoría de los switches Ethernet guardan una entrada en la tabla durante cinco minutos. Si la dirección MAC de origen existe en la tabla, pero en un puerto diferente, el switch la trata como una entrada nueva. La entrada se reemplaza con la misma dirección MAC, pero con el número de puerto más actual.</li>
+</ul>
+<p><strong>Paso 2. Reenviar - Examinadno la dirección destino MAC</strong></p>
+<p>Si la dirección MAC de destino es una dirección de unidifusión, el switch busca una coincidencia entre la dirección MAC de destino de la trama y una entrada de la tabla de direcciones MAC:</p>
+<ul>
+<li>Si la dirección MAC de destino está en la tabla, reenviará la trama por el puerto especificado.</li>
+<li>Si la dirección MAC de destino no está en la tabla, el switch reenviará la trama por todos los puertos, excepto por el de entrada. Esto se conoce como unidifusión desconocida. Si la dirección MAC de destino es de difusión o de multidifusión, la trama también se envía por todos los puertos, excepto por el de entrada.</li>
+</ul>
+<p>2.1.4</p>
+<h2 id="metodos-de-reenvio-del-switch">Métodos de reenvío del switch<a class="headerlink" href="#metodos-de-reenvio-del-switch" title="Permanent link">&para;</a></h2>
+<p>Los switches toman decisiones de reenvío de capa 2 muy rápidamente. Esto se debe al software en los circuitos integrados para aplicaciones específicas (ASIC, por sus siglas en ingles). Los ASIC reducen el tiempo de manejo de paquetes dentro del dispositivo y permiten que el dispositivo pueda manejar una mayor cantidad de puertos sin disminuir el rendimiento.</p>
+<p>Los switches de capa 2 utilizan uno de estos dos métodos para cambiar tramas:</p>
+<ul>
+<li><strong>Almacenamiento y reenvío de switching</strong> - Este método toma una decisión de reenvío en una trama después de haber recibido la trama completa y revisada para la detección de errores mediante un mecanismo matemático de verificación de errores conocido como Verificación por Redundancia Cíclica (Cyclic Redundancy Check, CRC). El intercambio por almacenamiento y envío es el método principal de switching LAN de Cisco.</li>
+<li><strong>Método de corte</strong> - Este método inicia el proceso de reenvío una vez que se determinó la dirección MAC de destino de una trama entrante y se estableció el puerto de salida.</li>
+</ul>
+<p>2.1.6</p>
+<h2 id="intercambio-de-almacenamiento-y-reenvio">Intercambio de almacenamiento y reenvío<a class="headerlink" href="#intercambio-de-almacenamiento-y-reenvio" title="Permanent link">&para;</a></h2>
+<p>El intercambio de almacenamiento y reenvío, a diferencia del intercambio de corte, tiene laS siguientes características principales:</p>
+<ul>
+<li><strong>Verificación de errores</strong> - Después de recibir la trama completa en el puerto de entrada, el switch compara el valor de Secuencia de Verificación de Trama (Frame Check Sequence, FCS) en el último campo del datagrama con sus propios cálculos de FCS. FCS es un proceso de verificación de errores que contribuye a asegurar que la trama no contenga errores físicos ni de enlace de datos. Si la trama no posee errores, el switch la reenvía. De lo contrario, se descartan las tramas.</li>
+<li><strong>Almacenamiento en búfer automático</strong> - El proceso de almacenamiento en buffer que usan los switches de almacenamiento y envío proporciona la flexibilidad para admitir cualquier combinación de velocidades de Ethernet. Por ejemplo, manejar una trama entrante que viaja a un puerto Ethernet de 100 Mbps que debe enviarse a una interfaz de 1 Gbps, requeriría utilizar el método de almacenamiento y reenvío. Ante cualquier incompatibilidad de las velocidades de los puertos de entrada y salida, el switch almacena la trama completa en un buffer, calcula la verificación de FCS, la reenvía al buffer del puerto de salida y después la envía.</li>
+</ul>
+<p>La figura ilustra cómo almacenar y reenviar toma una decisión basada en la trama Ethernet.
+![[Pasted image 20241212111113.png]]</p>
+<p>2.1.7</p>
+<h2 id="switching-por-metodo-de-corte">Switching por método de corte<a class="headerlink" href="#switching-por-metodo-de-corte" title="Permanent link">&para;</a></h2>
+<p>El método de switching de almacenamiento y reenvío elimina las tramas que no pasan la comprobación FCS. Por lo tanto, no reenvía tramas no válidas.</p>
+<p>Por el contrario, los switches que usan el método de corte pueden reenviar tramas no válidas, ya que no realizan la verificación de FCS. Sin embargo, el switching de corte tiene la capacidad de realizar un cambio de trama rápida. Esto significa que los switches que usan el método de corte pueden tomar una decisión de reenvío tan pronto como encuentren la dirección MAC de destino de la trama en la tabla de direcciones MAC, tal y como se muestra en la ilustración.
+![[Pasted image 20241212111201.png]]
+El switch no tiene que esperar a que el resto de la trama ingrese al puerto de entrada antes de tomar la decisión de reenvío.</p>
+<p>El switching libre de fragmentos es una forma modificada de corte, en la que el switch solo comienza a reenviar la trama después de haber leído el campo Tipo. El switching libre de fragmentos proporciona una mejor verificación de errores que el método de corte, con prácticamente ningún aumento de latencia.</p>
+<p>La velocidad de latencia más baja del switching por corte hace que resulte más adecuado para las aplicaciones mas demandantes de Tecnología Informática de Alto Rendimiento (High-Performance Computing, HPC) que requieren latencias de proceso a proceso de 10 microsegundos o menos.</p>
+<p>El método switching de corte puede reenviar tramas con errores. Si hay un índice de error alto (tramas no válidas) en la red, el switching por método de corte puede tener un impacto negativo en el ancho de banda, de esta forma, se obstruye el ancho de banda con las tramas dañadas y no válidas.</p>
+<hr />
+<h1 id="dominios-de-switching">Dominios de switching<a class="headerlink" href="#dominios-de-switching" title="Permanent link">&para;</a></h1>
+<p>2.2.1</p>
+<h2 id="dominios-de-colisiones">Dominios de colisiones<a class="headerlink" href="#dominios-de-colisiones" title="Permanent link">&para;</a></h2>
+<p>En el tema anterior, obtuvo una mejor comprensión de lo que es un switch y cómo funciona. En este tema se explica cómo funcionan los switches entre sí y con otros dispositivos para eliminar colisiones y reducir la congestión de la red. Los términos colisiones y congestión se utilizan aquí de la misma manera que se utilizan en el tráfico callejero.</p>
+<p>En segmentos Ethernet basados en hubs antiguos, los dispositivos de red compitieron por el medio compartido. Los segmentos de red que comparten el mismo ancho de banda entre dispositivos se conocen como dominios de colisión. Cuando dos o más dispositivos del mismo dominio de colisión tratan de comunicarse al mismo tiempo, se produce una colisión.</p>
+<p>Si un puerto Ethernet de switch funciona en semidúplex, cada segmento está en su propio dominio de colisión. No hay dominios de colisión cuando los puertos del switch funcionan en dúplex completo. Sin embargo, podría haber un dominio de colisión si un puerto de switch funciona en semidúplex.</p>
+<p>De manera predeterminada, los puertos de Ethernet del switch negociarán automáticamente el dúplex completo cuando el dispositivo adyacente también pueda funcionar en dúplex completo. Si el puerto del switch está conectado a un dispositivo que funciona en semidúplex, como por ejemplo un hub antiguo, el puerto de switch funcionará en modo semidúplex. En el caso de semidúplex, el puerto de switch formará parte de un dominio de colisión.</p>
+<p>Como se muestra en la figura, se elige dúplex completo si ambos dispositivos cuentan con la funcionalidad, junto con su ancho de banda común más elevado.
+![[Pasted image 20241212111546.png]]
+2.2.2</p>
+<h2 id="dominios-de-difusion">Dominios de difusión<a class="headerlink" href="#dominios-de-difusion" title="Permanent link">&para;</a></h2>
+<p>Una serie de switches interconectados forma un dominio de difusión simple. Solo los dispositivos de capa de red, como los routers, pueden dividir un dominio de difusión de capa 2. Los routers se utilizan para segmentar los dominios de difusión, pero también segmentan un dominio de colisión.</p>
+<p>Cuando un dispositivo desea enviar una difusión de capa 2, la dirección MAC de destino de la trama se establece solo en números uno binarios.</p>
+<p>El dominio de difusión de capa 2 se denomina “dominio de difusión MAC”. El dominio de difusión MAC consta de todos los dispositivos en la LAN que reciben tramas de difusión de un host.</p>
+<p>![[Pasted image 20241212111659.png]]
+Cuando un switch recibe una trama de difusión, la reenvía por cada uno de sus puertos, excepto por el puerto de entrada en el que se recibió la trama de difusión. Cada dispositivo conectado al switch recibe una copia de la trama de difusión y la procesa.</p>
+<p>En ocasiones, las difusiones son necesarias para localizar inicialmente otros dispositivos y servicios de red, pero también reducen la eficacia de la red. El ancho de banda de red se usa para propagar el tráfico de difusión. Si hay demasiadas difusiones y una carga de tráfico intensa en una red, se puede producir una congestión, lo que reduce el rendimiento de la red.</p>
+<p>Cuando hay dos switches conectados entre sí, se aumenta el dominio de difusión, como se ve en la segunda mitad de la animación. En este caso, se reenvía una trama de difusión a todos los puertos conectados en el switch S1. El switch S1 está conectado al switch S2. Luego, la trama se propaga a todos los dispositivos conectados al switch S2.</p>
+<p>2.2.3</p>
+<h2 id="alivio-de-la-congestion-en-la-red">Alivio de la congestión en la red<a class="headerlink" href="#alivio-de-la-congestion-en-la-red" title="Permanent link">&para;</a></h2>
+<p>Los switches LAN tienen características especiales que los hacen eficaces para aliviar la congestión de una red. De manera predeterminada, los puertos de switch interconectados tratan de establecer un enlace en dúplex completo y por lo tanto se eliminan los dominios de colisión. Cada puerto dúplex completo del switch ofrece el ancho de banda completo a los dispositivos conectados a dicho puerto. Las conexiones dúplex completas aumentaron notablemente el rendimiento de las redes LAN y se requieren para velocidades de Ethernet de 1 Gb/s y superiores.</p>
+<p>Los switches interconectan segmentos LAN, usan una tabla de direcciones MAC para determinar los puertos de salida y pueden reducir o eliminar por completo las colisiones. Las características de los switches que alivian la congestión de la red incluyen las siguientes:</p>
+<ul>
+<li><strong>Velocidades de puertos rápidas</strong> : las velocidades de los puertos del switch Ethernet varían según el modelo y el propósito. Por ejemplo, la mayoría de los switches de capa de acceso admiten velocidades de puerto de 100 Mbps y 1 Gbps. Los switches de capa de distribución admiten velocidades de puerto de 100 Mbps, 1 Gbps y 10 Gbps y los switches de nivel central y centro de datos admiten velocidades de puerto de 100 Gbps, 40 Gbps y 10 Gbps. Los switches con velocidades de puerto más rápidas cuestan más pero pueden reducir la congestión.</li>
+<li><strong>Cambio interno rápido</strong> : los switches utilizan un bus interno rápido o memoria compartida para proporcionar un alto rendimiento.</li>
+<li><strong>Búferes de trama grande</strong> : los switches utilizan búferes de memoria grande para almacenar temporalmente más tramas recibidas antes de tener que empezar a descartarlas. Esto permite que el tráfico de entrada desde un puerto más rápido (por ejemplo, 1 Gbps) se reenvíe a un puerto de salida más lento (por ejemplo, 100 Mbps) sin perder tramas.</li>
+<li><strong>Alta densidad de puertos</strong> : un switch de alta densidad de puertos reduce los costos generales porque reduce el número de switches requeridos. Por ejemplo, si se necesitaran 96 puertos de acceso, sería menos costoso comprar dos switches de 48 puertos en lugar de cuatro switches de 24 puertos. Los switches de alta densidad de puertos también ayudan a mantener el tráfico local, lo que ayuda a aliviar la congestión.</li>
+</ul>
+<p>2.2.4</p>
+<h2 id="verifique-su-comprension-cambiar-dominios">Verifique su comprensión - Cambiar dominios<a class="headerlink" href="#verifique-su-comprension-cambiar-dominios" title="Permanent link">&para;</a></h2>
+<p>Verifique su comprensión sobre dominios de switches eligiendo la MEJOR respuesta a las siguientes preguntas.</p>
+<ol>
+<li>
+<p>¿Qué velocidad de puerto se negociará automáticamente entre un host con una NIC de 1 Gbps que se conecta a un switch Cisco Catalyst 2960 con un puerto de 100 Mbps?</p>
+<p>10 Mbps</p>
+<p>100 Mbps</p>
+<p>1 Gbps</p>
+<p>10 Gbps</p>
+</li>
+<li>
+<p>¿Qué dispositivo separa los dominios de difusión?</p>
+<p>punto de acceso</p>
+<p>hub</p>
+<p>router</p>
+<p>switch</p>
+</li>
+<li>
+<p>¿Qué dos características especiales utilizan los switches LAN para aliviar la congestión de la red? (Escoja dos opciones).</p>
+<p>velocidades de puertos rápidos</p>
+<p>switching interno rápido</p>
+<p>bajas densidades de puertos</p>
+<p>búferes de trama pequeña</p>
+</li>
+</ol>
+<hr />
+<h1 id="practica-del-modulo-y-cuestionario">Práctica del módulo y cuestionario<a class="headerlink" href="#practica-del-modulo-y-cuestionario" title="Permanent link">&para;</a></h1>
+<p>2.3.1</p>
+<h2 id="que-aprendere-en-este-modulo_1">¿Qué aprenderé en este módulo?<a class="headerlink" href="#que-aprendere-en-este-modulo_1" title="Permanent link">&para;</a></h2>
+<p><strong>Reenvío de trama</strong></p>
+<p>La decisión sobre cómo un switch reenvía el tráfico se toma en relación con el flujo de ese tráfico. El término ingreso describe el puerto donde una trama ingresa a un dispositivo. El término salida describe el puerto que las tramas utilizarán al salir del dispositivo. Una trama Ethernet nunca será reenviada fuera del puerto donde ingresó. Para definir qué puerto usar para transmitir una trama, el switch primero debe saber qué dispositivos existen en cada puerto. A medida que el switch aprende la relación de los puertos con los dispositivos, construye una tabla llamada tabla de direcciones MAC. Cada trama que ingresa a un switch se comprueba para obtener información nueva examinando la dirección MAC de origen de la trama y el número de puerto donde la trama ingresó al switch. Si la dirección MAC de destino es una dirección de unidifusión, el switch busca una coincidencia entre la dirección MAC de destino de la trama y una entrada en la tabla de direcciones MAC. Los métodos de reenvío de switches incluyen almacenamiento y reenvío y corte. Almacenaje y reenvío utiliza la comprobación de errores y el almacenamiento en búfer automático. El corte no comprueba errores. En su lugar, realiza un cambio rápido de trama. Esto significa que el switch puede tomar una decisión de reenvío tan pronto como haya buscado la dirección MAC de destino de la trama en su tabla de direcciones MAC.</p>
+<p><strong>Cambio de Dominio</strong></p>
+<p>Si un puerto Ethernet de switch funciona en semidúplex, cada segmento está en su propio dominio de colisión. No hay dominios de colisión cuando los puertos del switch funcionan en dúplex completo. De manera predeterminada, los puertos de Ethernet del switch negociarán automáticamente el dúplex completo cuando el dispositivo adyacente también pueda funcionar en dúplex completo. Una serie de switches interconectados forma un dominio de difusión simple. Solo los dispositivos de capa de red, como los routers, pueden dividir un dominio de difusión de capa 2. El dominio de difusión de capa 2 se denomina “dominio de difusión MAC”. El dominio de difusión MAC consta de todos los dispositivos en la LAN que reciben tramas de difusión de un host. Cuando un switch recibe una trama de difusión, la reenvía por cada uno de sus puertos, excepto el puerto de entrada en el que se recibió la trama de difusión. Cada dispositivo conectado al switch recibe una copia de la trama de difusión y la procesa. Los switches pueden: interconectar segmentos LAN, usar una tabla de direcciones MAC para determinar los puertos de salida y pueden reducir o eliminar por completo las colisiones. Para ayudar a aliviar la congestión, los switches utilizan velocidades de puerto rápidas, cambio interno rápido, búferes de tramas grandes y densidades de puertos altas</p>
+<p>2.3.2</p>
+<h2 id="prueba-del-modulo-conceptos-de-switches">Prueba del módulo: conceptos de switches<a class="headerlink" href="#prueba-del-modulo-conceptos-de-switches" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>¿Qué declaración es verdadera sobre los dominios de difusión y colisión?</p>
+<p>Agregar un router a una red aumentará el tamaño del dominio de colisión.</p>
+<p>Agregar un switch a una red aumentará el tamaño del dominio de difusión.</p>
+<p>El tamaño del dominio de colisión se puede reducir agregando switches a una red.</p>
+<p>Cuantas más interfaces tenga un router, mayor será el dominio de difusión resultante.</p>
+</li>
+<li>
+<p>¿Cuál es una función de un switch de capa 2?</p>
+<p>reenvía datos basados en direccionamiento lógico</p>
+<p>aprende el puerto asignado a un host examinando la dirección MAC de destino</p>
+<p>determina qué interfaz se utiliza para reenviar una trama basado en la dirección MAC de destino</p>
+<p>duplica la señal eléctrica de cada trama a cada puerto</p>
+</li>
+<li>
+<p>¿Cuál es la diferencia mas significativa entre un hub y un switch LAN de capa 2?</p>
+<p>Un hub reenvía tramas y un switch reenvía sólo paquetes.</p>
+<p>Un hub divide los dominios de colisión y un switch divide los dominios de difusión.</p>
+<p>Un switch crea muchos dominios de colisión más pequeños y un hub aumenta el tamaño de un solo dominio de colisión.</p>
+<p>Cada puerto de un hub es un dominio de colisión, y cada puerto de un switch es un dominio de difusión.</p>
+</li>
+<li>
+<p>¿Qué hace un switch LAN de Cisco si recibe una trama entrante y la dirección MAC de destino no figura en la tabla de direcciones MAC?</p>
+<p>Envía la trama a la dirección de puerta de enlace predeterminada.</p>
+<p>Reenvía la trama a todos los puertos, excepto al puerto donde se recibe la trama.</p>
+<p>Utiliza el Protocolo de Resolución de Direcciones (Address Resolution Protocol, ARP) para resolver el puerto relacionado con la trama.</p>
+<p>Descarta la trama.</p>
+</li>
+<li>
+<p>¿Qué característica del switch ayuda a aliviar la congestión de la red cuando un puerto de 10 Gbps reenvía datos a un puerto de 1 Gbps?</p>
+<p>velocidad de puerto rápido</p>
+<p>Switching interno rápido</p>
+<p>búfer de trama</p>
+<p>Alta densidad del puerto</p>
+</li>
+<li>
+<p>¿Qué método de switching utiliza el valor FCS?</p>
+<p>búfer de trama grande</p>
+<p>Almacenamiento y envío</p>
+<p>difusión</p>
+<p>Método de corte</p>
+</li>
+<li>
+<p>¿Qué representa el término "densidad de puertos" para un switch Ethernet?</p>
+<p>el número de puertos disponibles</p>
+<p>la velocidad de cada puerto</p>
+<p>el número de hosts que están conectados a cada puerto del switch</p>
+<p>el espacio de memoria asignado a cada puerto del switch</p>
+</li>
+<li>
+<p>¿Qué información utiliza un switch para mantener actualizada la información de la tabla de direcciones MAC?</p>
+<p>las direcciones MAC de origen y destino y el puerto de entrada</p>
+<p>la dirección MAC de destino y el puerto de salida</p>
+<p>la dirección MAC de destino y el puerto de entrada</p>
+<p>la dirección MAC de origen y el puerto de salida</p>
+<p>las direcciones MAC de origen y destino y el puerto de salida</p>
+<p>la dirección MAC de origen y el puerto de entrada</p>
+</li>
+<li>
+<p>¿Qué dos afirmaciones son ciertas acerca de las comunicaciones semidúplex y dúplex completo? (Escoja dos opciones).</p>
+<p>Todas las NIC modernas admiten comunicación semidúplex y dúplex completo.</p>
+<p>El dúplex completo aumenta el ancho de banda efectivo.</p>
+<p>La mitad dúplex tiene un solo canal.</p>
+<p>El dúplex completo permite que ambos extremos transmitan y reciban simultáneamente.</p>
+<p>El dúplex completo ofrece un uso potencial del ancho de banda al 100%.</p>
+</li>
+<li>
+<p>¿Qué tipo de dirección utiliza un switch para generar la tabla de direcciones MAC?</p>
+<p>dirección IP de destino</p>
+<p>dirección MAC de destino</p>
+<p>dirección IP de origen</p>
+<p>dirección MAC de origen</p>
+</li>
+<li>
+<p>¿Qué opción describe correctamente un método de switching?</p>
+<p>Almacenamiento y reenvío: reenvía la trama inmediatamente después de examinar su dirección MAC de destino</p>
+<p>Método de corte: toma una decisión de reenvío después de recibir toda la trama</p>
+<p>Almacenamiento y reenvío: asegura que la trama está libre de errores físicos y de enlace de datos</p>
+<p>Método de corte: proporciona la flexibilidad necesaria para admitir cualquier combinación de velocidades Ethernet</p>
+</li>
+<li>
+<p>¿Qué dispositivo de red puede funcionar como límite para dividir un dominio de difusión de capa 2?</p>
+<p>Puente Ethernet</p>
+<p>Hub Ethernet</p>
+<p>punto de acceso</p>
+<p>router</p>
+</li>
+<li>
+<p>¿Cuál es el propósito de los búferes de trama en un switch?</p>
+<p>Proporcionan un análisis de seguridad básico en las tramas recibidas.</p>
+<p>Retienen el tráfico, aliviando así la congestión de la red.</p>
+<p>Proporcionan almacenamiento temporal de la suma de comprobación de la trama.</p>
+<p>Ejecutan valores de suma de comprobación antes de la transmisión.</p>
+</li>
+<li>
+<p>¿Qué dispositivo de red se puede usar para eliminar colisiones en una red Ethernet?</p>
+<p>firewall</p>
+<p>hub</p>
+<p>switch</p>
+<p>router</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 by K3V1N 117
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "content.code.highlight"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
