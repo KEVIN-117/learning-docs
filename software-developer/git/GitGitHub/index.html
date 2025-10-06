@@ -1,0 +1,7261 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Git%20y%20GitHub/">
+      
+      
+        <link rel="next" href="../Hooks/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Introducción a Git: Guía para Principiantes - learning hub of the future</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom_htb.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-git-guia-para-principiantes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="learning hub of the future" class="md-header__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            learning hub of the future
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción a Git: Guía para Principiantes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="learning hub of the future" class="md-nav__button md-logo" aria-label="learning hub of the future" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    learning hub of the future
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calculadora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculadora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PROYECTO%20SIS-414/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PROYECTO SIS 414
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Palabras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Palabras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../obsidian_compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Obsidian compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1">
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitecto DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/Arquitecto%20DevOps/Arquitecto%20DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitecto DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Azure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/Azure/AZ-400%20Desarrollo%20para%20DevOps%20empresarial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AZ 400 Desarrollo para DevOps empresarial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/Azure/AZ-400%20EXPLORACION%20DE%20ENLACES%20DE%20GIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a los enlaces de Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3">
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Github actions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Github actions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/github-actions/GitHub%20Actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aspectos básicos de la implementación automatizada de aplicaciones con GitHub Actions y GitHub Pages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMARIO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMARIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/github-actions/TEMARIO/Gu%C3%ADa%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creación de un flujo de trabajo con GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/File%20System%20Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File System Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Final%20Presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Final Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/GUI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Serializaci%C3%B3n%20de%20Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Serialización de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas Tecnicas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas Tecnicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pruebas%20Tecnicas/Preguntas%20de%20Pruebas%20t%C3%A9cnicas%20para%20m%C3%B3vil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preguntas de Pruebas técnicas para móvil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/Learn%20AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learn AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2">
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ANEXOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            ANEXOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/ANEXOS/ai-mastery-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ruta Definitiva para Dominar la Inteligencia Artificial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/ANEXOS/future-learning-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Mejorada: Presente y Futuro de IA y Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/ANEXOS/learning-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ruta de Aprendizaje Integral en Ciencia de Datos, IA y MLOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3">
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo de Apps con LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Desarrollo%20de%20Apps%20con%20LLMs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo de Apps con LLMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/Desarrollo%20de%20Apps%20con%20LLMs/Embeddings%20y%20Bases%20de%20Datos%20Vectoriales%20para%20NLP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings y Bases de Datos Vectoriales para NLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Backend hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/Generadores%20en%20JavaScript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El poder de function* y yield
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/Graphql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graphql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3">
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Auth
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            Auth
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/auth/JWT-PASPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JWT PASPORT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/auth/jwt%20usando%20algoritmo%20rs256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jwt usando algoritmo rs256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4">
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Closures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/closures/Profundizando%20en%20Middlewares%20y%20Closures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profundizando en Middlewares y Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/closures/closures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5">
+        
+          
+          <label class="md-nav__link" for="__nav_11_5" id="__nav_11_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Orm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_5">
+            <span class="md-nav__icon md-icon"></span>
+            Orm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/orm/Drizzle%20ORM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drizzle ORM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_6">
+        
+          
+          <label class="md-nav__link" for="__nav_11_6" id="__nav_11_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_6">
+            <span class="md-nav__icon md-icon"></span>
+            Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend-hub/testing/Performance%20Testing%20en%20Node.js%20con%20K6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Testing en Node.js con K6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cisco academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Cisco academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CCNA 2 v7
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            CCNA 2 v7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2_1" id="__nav_12_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2_1_1" id="__nav_12_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_12_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 1   4 Conceptos de Switching, VLANs y enrutamiento entre redes VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/1%20Configuraci%C3%B3n%20b%C3%A1sica%20de%20dispositivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Configuración básica de dispositivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/2%20Conceptos%20de%20switching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Conceptos de switching
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/3%20VLANs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 VLANs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/4%20Inter-VLAN%20Routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Inter VLAN Routing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%201%20-%204%20Conceptos%20de%20Switching%2C%20VLANs%20y%20enrutamiento%20entre%20redes%20VLAN/APENDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2_1_2" id="__nav_12_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos 5   6 Redes Redundantes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_12_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 5   6 Redes Redundantes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2_1_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2_1_2_1" id="__nav_12_2_1_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1 CONCEPTOS STP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_12_2_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            1 CONCEPTOS STP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/1%20Prop%C3%B3sito%20del%20STP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Propósito del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/2%20Funcionamientos%20del%20STP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Funcionamientos del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/3%20Evoluci%C3%B3n%20del%20STP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Evolución del STP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/1%20CONCEPTOS%20STP/APENDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redes_Redundantes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2_1_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2_1_2_2" id="__nav_12_2_1_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2 EtherChannel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_12_2_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 EtherChannel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/1.%20Funcionamiento%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Funcionamiento de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/2.%20Configuraci%C3%B3n%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/3.%20Verificaci%C3%B3n%20y%20soluci%C3%B3n%20de%20problemas%20de%20EtherChannel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verificación y solución de problemas de EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/APENDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EtherChannel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%205%20-%206%20Redes%20Redundantes/2%20EtherChannel/Pr%C3%A1ctica%20del%20m%C3%B3dulo%20y%20cuestionario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica del módulo y cuestionario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2_1_3">
+        
+          
+          <label class="md-nav__link" for="__nav_12_2_1_3" id="__nav_12_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos 7   9 Redes Disponibles y Confiables
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_12_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos 7   9 Redes Disponibles y Confiables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco-academy/CCNA%202%20v7/modulos/M%C3%B3dulos%207%20-%209%20Redes%20Disponibles%20y%20Confiables/7%20DHCPv4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Competitive programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Competitive programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../competitive-programming/ICPC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ICPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../competitive-programming/Sieve%20of%20Eratosthenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sieve of Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14">
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ctf agetic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Ctf agetic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf-agetic/criptograf%C3%ADa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2">
+        
+          
+          <label class="md-nav__link" for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sql injection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sql injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf-agetic/sql%20injection/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15">
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    English academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            English academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../english-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../english-academy/Tiempos%20Verbales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tiempos Verbales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../english-academy/VERBOS%20REGULARES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_4">
+        
+          
+          <label class="md-nav__link" for="__nav_15_4" id="__nav_15_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HOMEWORK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_4">
+            <span class="md-nav__icon md-icon"></span>
+            HOMEWORK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../english-academy/HOMEWORK/VERBOS%20REGULARES%20E%20IRREGULARES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VERBOS REGULARES E IRREGULARES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16">
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Git and github
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Git and github
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git%20and%20github/Git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17">
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Htb academy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            Htb academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/PLANIFICACION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLANIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_2" id="__nav_17_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Jobs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_2">
+            <span class="md-nav__icon md-icon"></span>
+            Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/Jobs/Ingeniero%20de%20contenido/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ingeniero de contenido
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3" id="__nav_17_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MODULOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3">
+            <span class="md-nav__icon md-icon"></span>
+            MODULOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_1" id="__nav_17_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ATAQUES DEL LADO DEL SERVIDOR
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_17_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ATAQUES DEL LADO DEL SERVIDOR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/ATAQUES%20DEL%20LADO%20DEL%20SERVIDOR/Ataques%20del%20lado%20del%20servidor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ATAQUES DEL LADO DEL SERVIDOR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_1_2" id="__nav_17_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_17_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/ATAQUES%20DEL%20LADO%20DEL%20SERVIDOR/TEMAS/1.%20Introduction%20to%20Server-side%20Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introduction to Server side Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_2" id="__nav_17_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ENUMERACIÓN DE REDES CON NMAP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_17_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            ENUMERACIÓN DE REDES CON NMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/1.%20Enumeraci%C3%B3n%20de%20host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Enumeración de host
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/2.%20Evitar%20medidas%20de%20seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evasión de firewalls e IDS/IPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/ENUMERACI%C3%93N%20DE%20REDES%20CON%20NMAP/ENUMERACION%20DE%20REDES%20CON%20NMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ENUMERACION DE REDES CON NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_3" id="__nav_17_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_17_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_3_2" id="__nav_17_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_17_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4" id="__nav_17_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TIER 0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_17_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            TIER 0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/Login%20Brute%20Forcing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login Brute Forcing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2" id="__nav_17_3_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_17_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_1" id="__nav_17_3_4_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_17_3_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            FUNDAMENTOS DE LINUX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/FUNDAMENTOS%20DE%20LINUX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FUNDAMENTOS DE LINUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_1_2" id="__nav_17_3_4_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_17_3_4_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/1.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/2.%20La%20Shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. La Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/3.%20Flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Flujo de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/4.%20Gesti%C3%B3n%20del%20sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Gestión del sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/5.%20Linux%20Networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Linux Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/6.%20Linux%20Hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Linux Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/7.%20Distribuciones%20Linux%20vs%20Solaris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Distribuciones Linux vs Solaris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/FUNDAMENTOS%20DE%20LINUX/TEMAS/8.%20Consejos%20y%20trucos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8. Consejos y trucos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_2" id="__nav_17_3_4_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_17_3_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            INTRODUCCION A LA CREACION DE REDES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INTRODUCCION A LA CREACION DE REDES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_2_2" id="__nav_17_3_4_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_17_3_4_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/1%20Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descripción general de la red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/2%20Estructura%20de%20la%20red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/INTRODUCCION%20A%20LA%20CREACION%20DE%20REDES/TEMAS/3%20Flujo%20de%20trabajo%20de%20redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelos de redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_3" id="__nav_17_3_4_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_17_3_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/Introducci%C3%B3n%20a%20Active%20Directory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_3_2" id="__nav_17_3_4_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_17_3_4_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/1.%20Por%20qu%C3%A9%20Active%20Directory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Por qué Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/2.%20Fundamentos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Fundamentos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/3.%20Protocolos%20de%20Active%20Directory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Protocolos de Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20Active%20Directory/TEMAS/4.%20Todo%20sobre%20los%20usuarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Todo sobre los usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_4" id="__nav_17_3_4_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_17_3_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a la programación en Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la programación en Bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_3_4_2_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_17_3_4_2_4_2" id="__nav_17_3_4_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TEMAS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_17_3_4_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_3_4_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            TEMAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/1.%20Introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/2.%20Componentes%20de%20trabajo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Componentes de trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/3.%20Control%20de%20secuencias%20de%20comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Control de secuencias de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/4.%20Flujo%20de%20ejecuci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/MODULOS/TIER%200/FUNDAMENTOS/Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20en%20Bash/TEMAS/Revalidate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Revalidate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_4">
+        
+          
+          <label class="md-nav__link" for="__nav_17_4" id="__nav_17_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Htb commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_4">
+            <span class="md-nav__icon md-icon"></span>
+            Htb commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/htb-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    COMANDOS UTILIZADOS DURANTE LA PRACTICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/htb-commands/SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table of contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_17_4_3" id="__nav_17_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laboratorios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_17_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratorios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/htb-commands/laboratorios/laboratorio-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    laboratorio 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_5">
+        
+          
+          <label class="md-nav__link" for="__nav_17_5" id="__nav_17_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_5">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/labs/1.%20punto%20de%20partida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aprenda los conceptos básicos de las pruebas de penetración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/labs/Helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_17_5_3" id="__nav_17_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tier I
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_17_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tier I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/labs/Tier%20I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17_6">
+        
+          
+          <label class="md-nav__link" for="__nav_17_6" id="__nav_17_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Proceso de aprendisaje
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_17_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17_6">
+            <span class="md-nav__icon md-icon"></span>
+            Proceso de aprendisaje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/proceso%20de%20aprendisaje/1.%20Mentalidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Mentalidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/proceso%20de%20aprendisaje/2.%20Dependencias%20de%20aprendizaje/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Dependencias de aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/proceso%20de%20aprendisaje/3.%20Descripci%C3%B3n%20general%20del%20aprendizaje/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Descripción general del aprendizaje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htb-academy/proceso%20de%20aprendisaje/4.%20El%20proceso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. El proceso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18">
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/PYTHON%20CERTIFICACION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PYTHON CERTIFICACION
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Software developer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            Software developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PROYECTOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PROYECTOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programacio%CC%81n%20Funcional%20Con%20Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programación Funcional Con Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software%20Exam%20Certification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Exam Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tecnolog%C3%ADas%20M%C3%B3viles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tecnologías Móviles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react%20native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    React native
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19_7" id="__nav_19_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_19_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19_7">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONVENTIONAL%20COMMIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CONVENTIONAL COMMIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git%20y%20GitHub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git y GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Git: Guía para Principiantes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Git: Guía para Principiantes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion-a-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducción a Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introducción a Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. ¿Qué es Git?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-por-que-usar-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. ¿Por qué usar Git?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-principales-caracteristicas-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Principales características de Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalacion-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instalación de Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Instalación de Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-descarga-e-instalacion-de-git-en-diferentes-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Descarga e instalación de Git en diferentes sistemas operativos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configuracion-inicial-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configuración inicial de Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fundamentos-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Fundamentos de Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Fundamentos de Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-conceptos-basicos-repositorio-commit-rama-fusion-clonacion-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Conceptos básicos: repositorio, commit, rama, fusión, clonación, etc.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ciclo-de-vida-de-los-archivos-en-git-untracked-tracked-staged-committed" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Ciclo de vida de los archivos en Git: untracked, tracked, staged, committed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuracion-de-un-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuración de un Repositorio Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configuración de un Repositorio Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-creacion-de-un-nuevo-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Creación de un nuevo repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-inicializacion-de-un-repositorio-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Inicialización de un repositorio existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-anadir-archivos-al-repositorio-git-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Añadir archivos al repositorio (git add)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-realizar-un-commit-git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Realizar un commit (git commit)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-trabajo-con-ramas-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Trabajo con Ramas (Branches)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Trabajo con Ramas (Branches)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-creacion-de-una-nueva-rama-git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Creación de una nueva rama (git branch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-cambio-entre-ramas-git-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Cambio entre ramas (git checkout)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-fusion-de-ramas-git-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Fusión de ramas (git merge)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-eliminacion-de-ramas-git-branch-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4. Eliminación de ramas (git branch -d)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-trabajo-con-repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Trabajo con Repositorios Remotos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Trabajo con Repositorios Remotos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-conexion-a-un-repositorio-remoto-git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Conexión a un repositorio remoto (git remote)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-clonacion-de-un-repositorio-remoto-git-clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Clonación de un repositorio remoto (git clone)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-descarga-de-cambios-desde-el-repositorio-remoto-git-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Descarga de cambios desde el repositorio remoto (git pull)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-envio-de-cambios-al-repositorio-remoto-git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4. Envío de cambios al repositorio remoto (git push)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resolucion-de-conflictos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Resolución de Conflictos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resolución de Conflictos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-causas-comunes-de-conflictos-en-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. Causas comunes de conflictos en Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-identificacion-y-resolucion-de-conflictos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. Identificación y resolución de conflictos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-estrategias-para-resolver-conflictos-de-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3. Estrategias para resolver conflictos de fusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-otros-comandos-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Otros Comandos Útiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Otros Comandos Útiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-visualizacion-del-historial-de-commits-git-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1. Visualización del historial de commits (git log)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-deshacer-cambios-git-reset-git-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2. Deshacer cambios (git reset, git checkout)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-etiquetado-de-commits-git-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3. Etiquetado de commits (git tag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-ignorar-archivos-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4. Ignorar archivos (.gitignore)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-buenas-practicas-y-recomendaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Buenas Prácticas y Recomendaciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Buenas Prácticas y Recomendaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-convenciones-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Convenciones de nomenclatura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-uso-de-ramas-branches-adecuado" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Uso de ramas (branches) adecuado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-mensajes-de-commit-descriptivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3. Mensajes de commit descriptivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-mantenimiento-y-limpieza-del-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4. Mantenimiento y limpieza del repositorio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionales-y-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos Adicionales y Referencias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Recursos Adicionales y Referencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-enlaces-a-documentacion-oficial-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1. Enlaces a documentación oficial de Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-tutoriales-y-guias-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2. Tutoriales y guías recomendadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-comunidades-y-foros-de-soporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3. Comunidades y foros de soporte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-ejercicios-y-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Ejercicios y Prácticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Ejercicios y Prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-ejercicios-para-practicar-el-uso-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1. Ejercicios para practicar el uso de Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Conclusiones
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8">
+        
+          
+          <label class="md-nav__link" for="__nav_19_8" id="__nav_19_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Patrones de diseño
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_19_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8">
+            <span class="md-nav__icon md-icon"></span>
+            Patrones de diseño
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8_1">
+        
+          
+          <label class="md-nav__link" for="__nav_19_8_1" id="__nav_19_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Comportamiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_19_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Comportamiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/comportamiento/APENDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8_2">
+        
+          
+          <label class="md-nav__link" for="__nav_19_8_2" id="__nav_19_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Creacionales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_19_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Creacionales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/1%20Factory%20Method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Factory Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/2%20Abstract%20Factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Abstract Factory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/3%20Builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/4%20Prototype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Prototype
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/5%20Singleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Singleton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/APENDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patrones creacionales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_19_8_2_7" id="__nav_19_8_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_19_8_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ejercicios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/creacionales/ejercicios/Builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    easy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8_3">
+        
+          
+          <label class="md-nav__link" for="__nav_19_8_3" id="__nav_19_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estructurales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_19_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Estructurales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patrones%20de%20dise%C3%B1o/estructurales/APENDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APENDICE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion-a-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducción a Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introducción a Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. ¿Qué es Git?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-por-que-usar-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. ¿Por qué usar Git?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-principales-caracteristicas-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Principales características de Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalacion-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instalación de Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Instalación de Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-descarga-e-instalacion-de-git-en-diferentes-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Descarga e instalación de Git en diferentes sistemas operativos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configuracion-inicial-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configuración inicial de Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fundamentos-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Fundamentos de Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Fundamentos de Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-conceptos-basicos-repositorio-commit-rama-fusion-clonacion-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Conceptos básicos: repositorio, commit, rama, fusión, clonación, etc.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ciclo-de-vida-de-los-archivos-en-git-untracked-tracked-staged-committed" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Ciclo de vida de los archivos en Git: untracked, tracked, staged, committed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuracion-de-un-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuración de un Repositorio Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configuración de un Repositorio Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-creacion-de-un-nuevo-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Creación de un nuevo repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-inicializacion-de-un-repositorio-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Inicialización de un repositorio existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-anadir-archivos-al-repositorio-git-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Añadir archivos al repositorio (git add)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-realizar-un-commit-git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Realizar un commit (git commit)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-trabajo-con-ramas-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Trabajo con Ramas (Branches)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Trabajo con Ramas (Branches)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-creacion-de-una-nueva-rama-git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Creación de una nueva rama (git branch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-cambio-entre-ramas-git-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Cambio entre ramas (git checkout)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-fusion-de-ramas-git-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Fusión de ramas (git merge)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-eliminacion-de-ramas-git-branch-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4. Eliminación de ramas (git branch -d)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-trabajo-con-repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Trabajo con Repositorios Remotos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Trabajo con Repositorios Remotos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-conexion-a-un-repositorio-remoto-git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Conexión a un repositorio remoto (git remote)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-clonacion-de-un-repositorio-remoto-git-clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Clonación de un repositorio remoto (git clone)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-descarga-de-cambios-desde-el-repositorio-remoto-git-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Descarga de cambios desde el repositorio remoto (git pull)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-envio-de-cambios-al-repositorio-remoto-git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4. Envío de cambios al repositorio remoto (git push)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resolucion-de-conflictos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Resolución de Conflictos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resolución de Conflictos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-causas-comunes-de-conflictos-en-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. Causas comunes de conflictos en Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-identificacion-y-resolucion-de-conflictos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. Identificación y resolución de conflictos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-estrategias-para-resolver-conflictos-de-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3. Estrategias para resolver conflictos de fusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-otros-comandos-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Otros Comandos Útiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Otros Comandos Útiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-visualizacion-del-historial-de-commits-git-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1. Visualización del historial de commits (git log)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-deshacer-cambios-git-reset-git-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2. Deshacer cambios (git reset, git checkout)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-etiquetado-de-commits-git-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3. Etiquetado de commits (git tag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-ignorar-archivos-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4. Ignorar archivos (.gitignore)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-buenas-practicas-y-recomendaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Buenas Prácticas y Recomendaciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Buenas Prácticas y Recomendaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-convenciones-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Convenciones de nomenclatura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-uso-de-ramas-branches-adecuado" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Uso de ramas (branches) adecuado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-mensajes-de-commit-descriptivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3. Mensajes de commit descriptivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-mantenimiento-y-limpieza-del-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4. Mantenimiento y limpieza del repositorio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionales-y-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos Adicionales y Referencias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Recursos Adicionales y Referencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-enlaces-a-documentacion-oficial-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1. Enlaces a documentación oficial de Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-tutoriales-y-guias-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2. Tutoriales y guías recomendadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-comunidades-y-foros-de-soporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3. Comunidades y foros de soporte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-ejercicios-y-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Ejercicios y Prácticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Ejercicios y Prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-ejercicios-para-practicar-el-uso-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1. Ejercicios para practicar el uso de Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Conclusiones
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduccion-a-git-guia-para-principiantes">Introducción a Git: Guía para Principiantes<a class="headerlink" href="#introduccion-a-git-guia-para-principiantes" title="Permanent link">¶</a></h1>
+<hr>
+<h2 id="1-introduccion-a-git">1. Introducción a Git<a class="headerlink" href="#1-introduccion-a-git" title="Permanent link">¶</a></h2>
+<h3 id="11-que-es-git">1.1. ¿Qué es Git?<a class="headerlink" href="#11-que-es-git" title="Permanent link">¶</a></h3>
+<p>git es un sistema de control de versiones distribuido, gratuito y de código abierto, diseñado para manejar todo tipo de proyectos, desde los más pequeños hasta los más grandes, con rapidez y eficiencia. Fue creado por Linus Torvalds en 2005, con el objetivo de gestionar el desarrollo del kernel de Linux, y desde entonces se ha convertido en una de las herramientas más populares y ampliamente utilizadas por desarrolladores de software en todo el mundo.</p>
+<h3 id="12-por-que-usar-git">1.2. ¿Por qué usar Git?<a class="headerlink" href="#12-por-que-usar-git" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>control de versiones</strong>: Git permite a los desarrolladores registrar y rastrear todos los cambios realizados en los archivos de un proyecto, lo que facilita la colaboración y la gestión de las diferentes versiones del software.</li>
+<li><strong>trabajo en equipo</strong>: Git facilita la colaboración entre desarrolladores al permitir la sincronización de cambios entre repositorios locales y remotos alojados en servicios como GitHub, GitLab o Bitbucket.</li>
+<li><strong>flexibilidad y escalabilidad</strong>: Git es capaz de manejar proyectos de cualquier tamaño y complejidad, desde pequeños scripts hasta grandes aplicaciones empresariales, con rapidez y eficiencia.</li>
+<li><strong>seguimiento de cambios</strong>: Git permite a los desarrolladores ver y revertir cambios anteriores si es necesario, lo que facilita la identificación y corrección de errores en el código.</li>
+</ul>
+<h3 id="13-principales-caracteristicas-de-git">1.3. Principales características de Git<a class="headerlink" href="#13-principales-caracteristicas-de-git" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p><strong>Control de versiones</strong>: Git registra cada modificación realizada en los archivos del proyecto, lo que permite a los desarrolladores ver y revertir cambios anteriores si es necesario.</p>
+</li>
+<li>
+<p><strong>Ramas (branches)</strong>: Git permite a los desarrolladores trabajar en diferentes versiones del proyecto de manera simultánea, lo que facilita el desarrollo de nuevas características sin afectar la rama principal (normalmente llamada <code>master</code> o <code>main</code>).</p>
+</li>
+<li>
+<p><strong>Repositorios remotos</strong>: Git facilita la colaboración entre desarrolladores al permitir la sincronización de cambios entre repositorios locales y remotos alojados en servicios como GitHub, GitLab o Bitbucket.</p>
+</li>
+<li>
+<p><strong>Fusión (merge)</strong>: Git permite combinar los cambios realizados en diferentes ramas del proyecto en una sola versión final, lo que facilita la integración del trabajo de múltiples desarrolladores.</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-instalacion-de-git">2. Instalación de Git<a class="headerlink" href="#2-instalacion-de-git" title="Permanent link">¶</a></h2>
+<h3 id="21-descarga-e-instalacion-de-git-en-diferentes-sistemas-operativos">2.1 Descarga e instalación de Git en diferentes sistemas operativos<a class="headerlink" href="#21-descarga-e-instalacion-de-git-en-diferentes-sistemas-operativos" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Windows</strong>: Descargar el instalador desde el sitio web oficial de Git (https://git-scm.com/download/win) y seguir las instrucciones del asistente de instalación.</li>
+<li><strong>MacOS</strong>: Instalar Git a través de Homebrew (https://brew.sh/) ejecutando el comando <code>brew install git</code> en la terminal.</li>
+<li><strong>Linux</strong>: Instalar Git a través del gestor de paquetes de la distribución (por ejemplo, <code>apt</code> en Ubuntu o <code>yum</code> en CentOS) ejecutando el comando <code>sudo apt install git</code> o <code>sudo yum install git</code> en la terminal.</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span class="c1"># Instalación de Git en Ubuntu</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span class="c1"># Instalación de Git en CentOS</span>
+sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>git
+</code></pre></div>
+<h3 id="22-configuracion-inicial-de-git">2.2 Configuración inicial de Git<a class="headerlink" href="#22-configuracion-inicial-de-git" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Nombre de usuario</strong>: <code>git config --global user.name "Tu Nombre"</code></li>
+<li><strong>Dirección de correo electrónico</strong>: <code>git config --global user.email</code></li>
+</ul>
+<hr>
+<h2 id="3-fundamentos-de-git">3. Fundamentos de Git<a class="headerlink" href="#3-fundamentos-de-git" title="Permanent link">¶</a></h2>
+<h3 id="31-conceptos-basicos-repositorio-commit-rama-fusion-clonacion-etc">3.1. Conceptos básicos: repositorio, commit, rama, fusión, clonación, etc.<a class="headerlink" href="#31-conceptos-basicos-repositorio-commit-rama-fusion-clonacion-etc" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Repositorio (repository)</strong>: Un repositorio Git es un directorio que contiene todos los archivos y carpetas de un proyecto, así como la información sobre el historial de cambios realizados en el proyecto. Los repositorios pueden ser locales (en la máquina del desarrollador) o remotos (alojados en un servidor o servicio en la nube).</li>
+<li><strong>Repositorio remoto (remote repository)</strong>: Un repositorio remoto es una versión del proyecto alojada en un servidor externo, que permite a los desarrolladores colaborar y sincronizar cambios entre diferentes equipos. los servicios más populares para alojar repositorios remotos son GitHub, GitLab y Bitbucket.</li>
+<li><strong>Repositorio local (local repository)</strong>: Un repositorio local es una versión del proyecto almacenada en el equipo de un desarrollador, que permite trabajar de manera independiente y realizar cambios sin afectar el repositorio remoto</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Commit</strong>: Un commit es un registro de los cambios realizados en los archivos del proyecto en un momento específico, que incluye un mensaje descriptivo y un identificador único (hash).</li>
+<li><strong>Rama (branch)</strong>: Una rama es una línea independiente de desarrollo que permite a los desarrolladores trabajar en diferentes versiones del proyecto de manera simultánea, sin afectar la rama principal.</li>
+<li><strong>Fusión (merge)</strong>: La fusión es el proceso de combinar los cambios realizados en diferentes ramas del proyecto en una sola versión final, lo que facilita la integración del trabajo de múltiples desarrolladores.</li>
+<li><strong>Clonación (clone)</strong>: La clonación es el proceso de copiar un repositorio remoto a un repositorio local, lo que permite a los desarrolladores trabajar en una versión local del proyecto.</li>
+<li><strong>Staging</strong>: El staging es el proceso de preparar los archivos modificados para ser incluidos en el próximo commit, lo que permite a los desarrolladores seleccionar y organizar los cambios antes de confirmarlos.
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="./GitGitHub/Untitled.png" data-desc-position="bottom"><img alt="staging" src="./GitGitHub/Untitled.png"></a></li>
+</ul>
+<h3 id="32-ciclo-de-vida-de-los-archivos-en-git-untracked-tracked-staged-committed">3.2. Ciclo de vida de los archivos en Git: untracked, tracked, staged, committed<a class="headerlink" href="#32-ciclo-de-vida-de-los-archivos-en-git-untracked-tracked-staged-committed" title="Permanent link">¶</a></h3>
+<p>el ciclo de vida de los archivos en Git consta de cuatro estados principales:
+- <strong>Untracked (no rastreado)</strong>: Los archivos no rastreados son aquellos que no han sido incluidos en el repositorio y no están siendo gestionados por Git.
+- <strong>Tracked (rastreado)</strong>: Los archivos rastreados son aquellos que han sido incluidos en el repositorio y están siendo gestionados por Git. Los archivos rastreados pueden estar en los siguientes subestados:
+  - <strong>Modified (modificado)</strong>: Los archivos modificados son aquellos que han sido editados desde el último commit, pero aún no han sido preparados para el próximo commit.
+  - <strong>Unmodified (no modificado)</strong>: Los archivos no modificados son aquellos que no han sido editados desde el último commit y están listos para ser incluidos en el próximo commit.
+  - <strong>Ignored (ignorado)</strong>: Los archivos ignorados son aquellos que han sido excluidos del control de versiones de Git a través de un archivo <code>.gitignore</code>.
+  - <strong>Deleted (eliminado)</strong>: Los archivos eliminados son aquellos que han sido eliminados del sistema de archivos, pero aún no han sido confirmados a través de un commit.
+  - <strong>Renamed (renombrado)</strong>: Los archivos renombrados son aquellos que han sido renombrados en el sistema de archivos, pero aún no han sido confirmados a través de un commit. 
+- <strong>Staged (preparado)</strong>: Los archivos preparados son aquellos que han sido seleccionados para ser incluidos en el próximo commit, pero aún no han sido confirmados. El comando que nos permite preparar los archivos para el commit es <code>git add</code>.
+- <strong>Committed (confirmado)</strong>: Los archivos confirmados son aquellos que han sido incluidos en el historial de cambios del proyecto a través de un commit. El comando que nos permite realizar la confirmación de los cambios es <code>git commit</code>.</p>
+<h2 id="4-configuracion-de-un-repositorio-git">4. Configuración de un Repositorio Git<a class="headerlink" href="#4-configuracion-de-un-repositorio-git" title="Permanent link">¶</a></h2>
+<h3 id="41-creacion-de-un-nuevo-repositorio">4.1. Creación de un nuevo repositorio<a class="headerlink" href="#41-creacion-de-un-nuevo-repositorio" title="Permanent link">¶</a></h3>
+<ul>
+<li>para la creacion de un nuevo repositorio en github, se debe seguir los siguientes pasos:</li>
+<li>Iniciar sesión en GitHub y hacer clic en el botón "New" en la página principal.</li>
+<li>Ingresar el nombre del repositorio, una descripción opcional y seleccionar la visibilidad del repositorio (público o privado).</li>
+<li>Hacer clic en el botón "Create repository" para crear el nuevo repositorio.</li>
+<li>Una vez creado el repositorio, se mostrará la URL del repositorio remoto, que se utilizará para conectar el repositorio local con el repositorio remoto. <code>git remote add origin &lt;URL del repositorio remoto&gt;</code>. Para conectar el repositorio local con el repositorio remoto, se debe ejecutar el comando <code>git remote add origin &lt;URL del repositorio remoto&gt;</code> en la terminal, pero antes de ejecutar este comando, se debe haber inicializado el repositorio local con el comando <code>git init</code>.</li>
+</ul>
+<h3 id="42-inicializacion-de-un-repositorio-existente">4.2. Inicialización de un repositorio existente<a class="headerlink" href="#42-inicializacion-de-un-repositorio-existente" title="Permanent link">¶</a></h3>
+<ul>
+<li>para inicializar un repositorio existente, se debe ejecutar el comando <code>git init</code> en la terminal, en el directorio del proyecto que se desea convertir en un repositorio Git. Este comando creará un nuevo repositorio Git en el directorio actual, que incluirá un subdirectorio oculto llamado <code>.git</code> que contiene toda la información sobre el historial de cambios del proyecto. Para el <code>git init</code> comando exiten banderas que permiten realizar la inicialización del repositorio con ciertas configuraciones, como por ejemplo <code>git init --initial-branch=main</code> que permite inicializar el repositorio con una rama principal llamada <code>main</code> en lugar de <code>master</code>, que generalmente es la rama principal por defecto.</li>
+</ul>
+<h3 id="43-anadir-archivos-al-repositorio-git-add">4.3. Añadir archivos al repositorio (git add)<a class="headerlink" href="#43-anadir-archivos-al-repositorio-git-add" title="Permanent link">¶</a></h3>
+<ul>
+<li>para añadir archivos al repositorio, se debe ejecutar el comando <code>git add</code>, pero este comando tiene 2 variantes:</li>
+<li><code>git add &lt;nombre del archivo&gt;</code>: permite añadir un archivo específico al área de preparación (staging).</li>
+<li><code>git add .</code>: permite añadir todos los archivos modificados al área de preparación (staging).</li>
+</ul>
+<h3 id="44-realizar-un-commit-git-commit">4.4. Realizar un commit (git commit)<a class="headerlink" href="#44-realizar-un-commit-git-commit" title="Permanent link">¶</a></h3>
+<ul>
+<li>para realizar un commit, se debe ejecutar el comando <code>git commit -m "mensaje del commit"</code>, pero este comando tiene 2 variantes:</li>
+<li><code>git commit -m "mensaje del commit"</code>: permite realizar un commit con un mensaje descriptivo.</li>
+</ul>
+<h2 id="5-trabajo-con-ramas-branches">5. Trabajo con Ramas (Branches)<a class="headerlink" href="#5-trabajo-con-ramas-branches" title="Permanent link">¶</a></h2>
+<h3 id="51-creacion-de-una-nueva-rama-git-branch">5.1. Creación de una nueva rama (git branch)<a class="headerlink" href="#51-creacion-de-una-nueva-rama-git-branch" title="Permanent link">¶</a></h3>
+<ul>
+<li>para crear una rama solo se debe ejecutar el comando <code>git branch &lt;nombre de la rama&gt;</code> </li>
+</ul>
+<h3 id="52-cambio-entre-ramas-git-checkout">5.2. Cambio entre ramas (git checkout)<a class="headerlink" href="#52-cambio-entre-ramas-git-checkout" title="Permanent link">¶</a></h3>
+<ul>
+<li>para cambiar entre ramas, se debe ejecutar el comando <code>git checkout &lt;nombre de la rama&gt;</code></li>
+<li>para crear una rama y cambiar a ella al mismo tiempo, se debe ejecutar el comando <code>git checkout -b &lt;nombre de la rama&gt;</code></li>
+</ul>
+<h3 id="53-fusion-de-ramas-git-merge">5.3. Fusión de ramas (git merge)<a class="headerlink" href="#53-fusion-de-ramas-git-merge" title="Permanent link">¶</a></h3>
+<ul>
+<li>para fusionar una rama con otra, se debe ejecutar el comando <code>git merge &lt;nombre de la rama a fusionar&gt;</code></li>
+<li>para fusionar una rama con otra y eliminar la rama fusionada, se debe ejecutar el comando <code>git merge --delete &lt;nombre de la rama a fusionar&gt;</code></li>
+</ul>
+<h3 id="54-eliminacion-de-ramas-git-branch-d">5.4. Eliminación de ramas (git branch -d)<a class="headerlink" href="#54-eliminacion-de-ramas-git-branch-d" title="Permanent link">¶</a></h3>
+<ul>
+<li>para eliminar una rama, se debe ejecutar el comando <code>git branch -d &lt;nombre de la rama a eliminar&gt;</code> donde la bandera <code>-d</code> es <code>delete</code> en inglés, indica que se desea eliminar la rama.</li>
+</ul>
+<h2 id="6-trabajo-con-repositorios-remotos">6. Trabajo con Repositorios Remotos<a class="headerlink" href="#6-trabajo-con-repositorios-remotos" title="Permanent link">¶</a></h2>
+<h3 id="61-conexion-a-un-repositorio-remoto-git-remote">6.1. Conexión a un repositorio remoto (git remote)<a class="headerlink" href="#61-conexion-a-un-repositorio-remoto-git-remote" title="Permanent link">¶</a></h3>
+<ul>
+<li>para conectar un repositorio local con un repositorio remoto, se debe ejecutar el comando <code>git remote add origin &lt;URL del repositorio remoto&gt;</code></li>
+<li>para ver la lista de repositorios remotos conectados al repositorio local, se debe ejecutar el comando <code>git remote -v</code></li>
+</ul>
+<h3 id="62-clonacion-de-un-repositorio-remoto-git-clone">6.2. Clonación de un repositorio remoto (git clone)<a class="headerlink" href="#62-clonacion-de-un-repositorio-remoto-git-clone" title="Permanent link">¶</a></h3>
+<ul>
+<li>para clonar un repositorio remoto, se debe ejecutar el comando <code>git clone &lt;URL del repositorio remoto&gt;</code> en el directorio donde se desea clonar el repositorio.</li>
+<li>para clonar un repositorio remoto en un directorio con un nombre diferente al del repositorio, se debe ejecutar el comando <code>git clone &lt;URL del repositorio remoto&gt; &lt;nombre del directorio&gt;</code></li>
+</ul>
+<h3 id="63-descarga-de-cambios-desde-el-repositorio-remoto-git-pull">6.3. Descarga de cambios desde el repositorio remoto (git pull)<a class="headerlink" href="#63-descarga-de-cambios-desde-el-repositorio-remoto-git-pull" title="Permanent link">¶</a></h3>
+<ul>
+<li>para descargar los cambios realizados en el repositorio remoto al repositorio local, se debe ejecutar el comando <code>git pull origin &lt;nombre de la rama&gt;</code> donde <code>origin</code> es el nombre del repositorio remoto y <code>&lt;nombre de la rama&gt;</code> es el nombre de la rama del repositorio remoto de la que se desea descargar los cambios. O solo <code>git pull</code> si se desea descargar los cambios de la rama actual.</li>
+</ul>
+<h3 id="64-envio-de-cambios-al-repositorio-remoto-git-push">6.4. Envío de cambios al repositorio remoto (git push)<a class="headerlink" href="#64-envio-de-cambios-al-repositorio-remoto-git-push" title="Permanent link">¶</a></h3>
+<ul>
+<li>para enviar los cambios realizados en el repositorio local al repositorio remoto, se debe ejecutar el comando <code>git push -u origin &lt;nombre de la rama&gt;</code> donde cada bandera tiene un significado:</li>
+<li><code>-u o --set-upstream</code>: indica que se desea establecer la rama local como rama de seguimiento (tracking branch) de la rama remota, lo que permite a Git realizar un seguimiento automático de los cambios entre las dos ramas.</li>
+<li><code>origin</code>: es el nombre del repositorio remoto.</li>
+<li><code>&lt;nombre de la rama&gt;</code>: es el nombre de la rama del repositorio remoto a la que se desea enviar los cambios.</li>
+<li><code>git push</code>: para enviar los cambios de la rama actual al repositorio remoto. si y solo si la rama local tiene una rama de seguimiento (tracking branch) configurada.</li>
+</ul>
+<h2 id="7-resolucion-de-conflictos">7. Resolución de Conflictos<a class="headerlink" href="#7-resolucion-de-conflictos" title="Permanent link">¶</a></h2>
+<h3 id="71-causas-comunes-de-conflictos-en-git">7.1. Causas comunes de conflictos en Git<a class="headerlink" href="#71-causas-comunes-de-conflictos-en-git" title="Permanent link">¶</a></h3>
+<ul>
+<li>Los conflictos en Git suelen ocurrir cuando dos o más desarrolladores realizan cambios en la misma parte del código, lo que puede generar conflictos al intentar fusionar los cambios en una sola versión final. Algunas de las causas comunes de conflictos en Git incluyen:</li>
+<li>Cambios simultáneos en la misma línea de código.</li>
+<li>Eliminación o modificación de archivos que han sido modificados por otros desarrolladores.</li>
+<li>Cambios en la estructura del proyecto que afectan a múltiples archivos y carpetas.</li>
+<li>Diferencias en la configuración y estilos de codificación entre los desarrolladores.</li>
+</ul>
+<h3 id="72-identificacion-y-resolucion-de-conflictos">7.2. Identificación y resolución de conflictos<a class="headerlink" href="#72-identificacion-y-resolucion-de-conflictos" title="Permanent link">¶</a></h3>
+<ul>
+<li>para identificar y resolver conflictos, se debe ejecutar el comando <code>git status</code> para ver el estado actual del repositorio y los archivos con conflictos.</li>
+<li>para resolver conflictos, se debe abrir los archivos con conflictos en un editor de texto y buscar las secciones marcadas con <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>, que indican las diferencias entre las versiones en conflicto.</li>
+<li>para marcar los conflictos como resueltos, se debe editar los archivos con conflictos, eliminar las marcas de conflicto y guardar los cambios.</li>
+<li>para finalizar la resolución de conflictos, se debe ejecutar el comando <code>git add &lt;nombre del archivo&gt;</code> para marcar los archivos con conflictos como preparados para el próximo commit.</li>
+<li>para finalizar la fusión, se debe ejecutar el comando <code>git commit -m "mensaje del commit"</code> para confirmar los cambios y completar la fusión.</li>
+<li>para cancelar la fusión y deshacer los cambios, se debe ejecutar el comando <code>git merge --abort</code> para cancelar la fusión y deshacer los cambios realizados.</li>
+<li>para cancelar la fusión y deshacer los cambios, se debe ejecutar el comando <code>git reset --hard</code> para deshacer los cambios realizados y volver al estado anterior a la fusión.</li>
+</ul>
+<h3 id="73-estrategias-para-resolver-conflictos-de-fusion">7.3. Estrategias para resolver conflictos de fusión<a class="headerlink" href="#73-estrategias-para-resolver-conflictos-de-fusion" title="Permanent link">¶</a></h3>
+<ul>
+<li>Algunas estrategias comunes para resolver conflictos de fusión en Git incluyen:</li>
+<li><strong>Comunicación y colaboración</strong>: Mantener una comunicación abierta y colaborativa con otros desarrolladores para evitar conflictos y resolverlos de manera eficiente.</li>
+<li><strong>Revisión de cambios</strong>: Revisar los cambios realizados por otros desarrolladores antes de fusionarlos con la rama principal, lo que permite identificar y resolver conflictos de manera proactiva.</li>
+<li><strong>Pruebas y validación</strong>: Realizar pruebas exhaustivas y validar los cambios antes de fusionarlos con la rama principal, lo que permite detectar y corregir conflictos antes de que afecten al proyecto.</li>
+<li><strong>Uso de herramientas de comparación y fusión</strong>: Utilizar herramientas especializadas para comparar y fusionar cambios en el código, lo que facilita la identificación y resolución de conflictos de manera visual y eficiente.</li>
+</ul>
+<h2 id="8-otros-comandos-utiles">8. Otros Comandos Útiles<a class="headerlink" href="#8-otros-comandos-utiles" title="Permanent link">¶</a></h2>
+<h3 id="81-visualizacion-del-historial-de-commits-git-log">8.1. Visualización del historial de commits (git log)<a class="headerlink" href="#81-visualizacion-del-historial-de-commits-git-log" title="Permanent link">¶</a></h3>
+<ul>
+<li>para visualizar el historial de commits, se debe ejecutar el comando <code>git log</code> en la terminal, que mostrará una lista de todos los commits realizados en el repositorio, incluyendo el autor, la fecha, el mensaje del commit y el identificador único (hash) de cada commit. Este comando tiene varias banderas que permiten personalizar la salida del historial de commits, como por ejemplo:</li>
+<li><code>git log --oneline</code>: muestra una lista resumida de los commits, con el identificador único y el mensaje del commit en una sola línea.</li>
+<li><code>git log --graph</code>: muestra una representación gráfica del historial de commits, que permite visualizar las ramas y fusiones del proyecto de manera más clara.</li>
+<li><code>git log --author="&lt;nombre del autor&gt;"</code>: muestra una lista de los commits realizados por un autor específico, lo que permite filtrar el historial de commits por autor.</li>
+<li><code>git log --since="&lt;fecha&gt;"</code>: muestra una lista de los commits realizados desde una fecha específica, lo que permite filtrar el historial de commits por fecha.</li>
+<li><code>git log --until="&lt;fecha&gt;"</code>: muestra una lista de los commits realizados hasta una fecha específica, lo que permite filtrar el historial de commits por fecha.</li>
+<li><code>git log --grep="&lt;palabra clave&gt;"</code>: muestra una lista de los commits que contienen una palabra clave específica en el mensaje del commit, lo que permite buscar y filtrar el historial de commits por palabra clave.</li>
+<li><code>git log --stat</code>: muestra una lista de los archivos modificados en cada commit, junto con las estadísticas de inserciones y eliminaciones realizadas en cada archivo.</li>
+<li><code>git log --pretty=format:"%h - %an, %ar : %s"</code>: muestra una lista personalizada de los commits, con el identificador único, el autor, la fecha relativa y el mensaje del commit en un formato específico.</li>
+<li><code>git log --graph --oneline --decorate --all</code>: muestra una representación gráfica del historial de commits, con una lista resumida de los commits, la decoración de las ramas y la visualización de todas las ramas del proyecto.</li>
+</ul>
+<h3 id="82-deshacer-cambios-git-reset-git-checkout">8.2. Deshacer cambios (git reset, git checkout)<a class="headerlink" href="#82-deshacer-cambios-git-reset-git-checkout" title="Permanent link">¶</a></h3>
+<ul>
+<li>para deshacer cambios, se debe ejecutar el comando <code>git reset &lt;nombre del archivo&gt;</code> para deshacer los cambios realizados en un archivo específico y volver al estado anterior al último commit.</li>
+<li>para deshacer cambios y volver al estado anterior al último commit, se debe ejecutar el comando <code>git reset --soft HEAD~1</code> para deshacer el último commit y mantener los cambios realizados en el área de preparación (staging).</li>
+<li>para deshacer cambios y eliminar los cambios realizados en el área de preparación (staging), se debe ejecutar el comando <code>git reset --mixed HEAD~1</code> para deshacer el último commit y eliminar los cambios realizados en el área de preparación (staging).</li>
+</ul>
+<h3 id="83-etiquetado-de-commits-git-tag">8.3. Etiquetado de commits (git tag)<a class="headerlink" href="#83-etiquetado-de-commits-git-tag" title="Permanent link">¶</a></h3>
+<ul>
+<li>para etiquetar un commit, se debe ejecutar el comando <code>git tag &lt;nombre de la etiqueta&gt; &lt;identificador del commit&gt;</code> para crear una etiqueta ligera (lightweight tag) que apunta a un commit específico.</li>
+<li>para etiquetar un commit con un mensaje descriptivo, se debe ejecutar el comando <code>git tag -a &lt;nombre de la etiqueta&gt; -m "mensaje de la etiqueta" &lt;identificador del commit&gt;</code> para crear una etiqueta anotada (annotated tag) que incluye un mensaje descriptivo y apunta a un commit específico.</li>
+<li>para ver la lista de etiquetas, se debe ejecutar el comando <code>git tag</code> para mostrar una lista de todas las etiquetas creadas en el repositorio.</li>
+</ul>
+<h3 id="84-ignorar-archivos-gitignore">8.4. Ignorar archivos (.gitignore)<a class="headerlink" href="#84-ignorar-archivos-gitignore" title="Permanent link">¶</a></h3>
+<ul>
+<li>para ignorar archivos, se debe crear un archivo llamado <code>.gitignore</code> en el directorio raíz del proyecto y añadir los nombres de los archivos y carpetas que se desean ignorar, uno por línea.</li>
+<li>para añadir patrones de exclusión, se debe utilizar caracteres comodín (*), que permiten ignorar múltiples archivos y carpetas con un solo patrón.</li>
+<li>para añadir comentarios, se debe utilizar el símbolo de almohadilla (#) al principio de la línea, que permite añadir comentarios descriptivos en el archivo <code>.gitignore</code>.</li>
+<li>para añadir reglas de exclusión, se debe utilizar los siguientes patrones:</li>
+<li><code>*.txt</code>: ignora todos los archivos con la extensión <code>.txt</code>.</li>
+<li><code>logs/</code>: ignora todos los archivos y carpetas dentro de la carpeta <code>logs</code>.</li>
+<li><code>temp/*</code>: ignora todos los archivos y carpetas dentro de la carpeta <code>temp</code>.</li>
+<li><code>!important.txt</code>: no ignora el archivo <code>important.txt</code>, a pesar de los patrones de exclusión anteriores.</li>
+</ul>
+<h2 id="9-buenas-practicas-y-recomendaciones">9. Buenas Prácticas y Recomendaciones<a class="headerlink" href="#9-buenas-practicas-y-recomendaciones" title="Permanent link">¶</a></h2>
+<h3 id="91-convenciones-de-nomenclatura">9.1. Convenciones de nomenclatura<a class="headerlink" href="#91-convenciones-de-nomenclatura" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Nombres de ramas</strong>: Utilizar nombres descriptivos y significativos para las ramas del proyecto, que reflejen el propósito y la funcionalidad de cada rama. Algunas convenciones comunes para nombrar ramas incluyen:</li>
+<li><code>feature/nombre-de-la-funcionalidad</code>: para nuevas características o funcionalidades del proyecto.</li>
+<li><code>bugfix/nombre-del-bug</code>: para correcciones de errores o bugs del proyecto.</li>
+<li><code>hotfix/nombre-del-hotfix</code>: para correcciones urgentes o hotfixes del proyecto.</li>
+<li><code>release/version-del-release</code>: para versiones estables o releases del proyecto.</li>
+<li><code>main</code> o <code>master</code>: para la rama principal del proyecto, que suele contener la versión estable y funcional del software.</li>
+<li><code>develop</code> o <code>dev</code>: para la rama de desarrollo del proyecto, que suele contener las últimas funcionalidades y cambios en desarrollo.</li>
+<li><code>test</code> o <code>testing</code>: para la rama de pruebas del proyecto, que suele contener las pruebas y validaciones del software.</li>
+<li><code>docs</code> o <code>documentation</code>: para la rama de documentación del proyecto, que suele contener la documentación y los recursos del software.</li>
+</ul>
+<h3 id="92-uso-de-ramas-branches-adecuado">9.2. Uso de ramas (branches) adecuado<a class="headerlink" href="#92-uso-de-ramas-branches-adecuado" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Ramas de funcionalidad</strong>: Utilizar ramas separadas para desarrollar nuevas funcionalidades o características del proyecto, lo que permite trabajar de manera independiente y realizar pruebas exhaustivas antes de fusionar los cambios con la rama principal.</li>
+</ul>
+<h3 id="93-mensajes-de-commit-descriptivos">9.3. Mensajes de commit descriptivos<a class="headerlink" href="#93-mensajes-de-commit-descriptivos" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Mensajes claros y descriptivos</strong>: Utilizar mensajes de commit claros y descriptivos que reflejen el propósito y el alcance de los cambios realizados en el proyecto, lo que facilita la revisión y la comprensión de los cambios por parte de otros desarrolladores.</li>
+<li><strong>Convenciones de mensajes de commit</strong>: Seguir convenciones de mensajes de commit como el formato <code>&lt;tipo&gt;: &lt;descripción&gt;</code> (por ejemplo, <code>feat: añadir nueva funcionalidad</code> o <code>fix: corregir error en el código</code>), que permite clasificar y organizar los cambios realizados en el proyecto de manera coherente y estructurada.</li>
+<li><strong>Mensajes concisos y específicos</strong>: Utilizar mensajes de commit concisos y específicos que se centren en los cambios realizados en un commit específico, evitando mensajes genéricos o ambiguos que dificulten la comprensión de los cambios.</li>
+</ul>
+<h3 id="94-mantenimiento-y-limpieza-del-repositorio">9.4. Mantenimiento y limpieza del repositorio<a class="headerlink" href="#94-mantenimiento-y-limpieza-del-repositorio" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Eliminación de ramas obsoletas</strong>: Eliminar las ramas obsoletas y fusionadas después de completar el desarrollo de nuevas funcionalidades o correcciones de errores, lo que permite mantener un repositorio limpio y organizado.</li>
+<li><strong>Revisión y limpieza del historial de commits</strong>: Realizar una revisión periódica del historial de commits para identificar y corregir errores, mensajes de commit incorrectos o cambios innecesarios, lo que permite mantener un historial de cambios limpio y coherente.</li>
+<li><strong>Actualización y sincronización regular</strong>: Actualizar y sincronizar el repositorio local con el repositorio remoto de manera regular, lo que permite mantener el proyecto actualizado y evitar conflictos o desincronizaciones entre los diferentes equipos de desarrollo.</li>
+</ul>
+<h2 id="10-recursos-adicionales-y-referencias">10. Recursos Adicionales y Referencias<a class="headerlink" href="#10-recursos-adicionales-y-referencias" title="Permanent link">¶</a></h2>
+<h3 id="101-enlaces-a-documentacion-oficial-de-git">10.1. Enlaces a documentación oficial de Git<a class="headerlink" href="#101-enlaces-a-documentacion-oficial-de-git" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="https://git-scm.com/doc">Documentación oficial de Git</a></li>
+<li><a href="https://rogerdudler.github.io/git-guide/index.es.html">Guía de referencia rápida de Git</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git Cheat Sheet</a></li>
+</ul>
+<h3 id="102-tutoriales-y-guias-recomendadas">10.2. Tutoriales y guías recomendadas<a class="headerlink" href="#102-tutoriales-y-guias-recomendadas" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="https://guides.github.com/">GitHub Guides</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorials</a></li>
+<li><a href="https://docs.gitlab.com/ee/topics/git/index.html">GitLab Learn Git</a></li>
+<li><a href="https://www.gitkraken.com/learn/git/tutorials">GitKraken Git Tutorials</a></li>
+</ul>
+<h3 id="103-comunidades-y-foros-de-soporte">10.3. Comunidades y foros de soporte<a class="headerlink" href="#103-comunidades-y-foros-de-soporte" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/tagged/git">Stack Overflow</a></li>
+<li><a href="https://github.community/">GitHub Community Forum</a></li>
+<li><a href="https://forum.gitlab.com/">GitLab Community Forum</a></li>
+<li><a href="https://www.reddit.com/r/git/">Reddit /r/git</a></li>
+<li><a href="https://dev.to/t/git">Dev.to Git</a></li>
+</ul>
+<h2 id="11-ejercicios-y-practicas">11. Ejercicios y Prácticas<a class="headerlink" href="#11-ejercicios-y-practicas" title="Permanent link">¶</a></h2>
+<h3 id="111-ejercicios-para-practicar-el-uso-de-git">11.1. Ejercicios para practicar el uso de Git<a class="headerlink" href="#111-ejercicios-para-practicar-el-uso-de-git" title="Permanent link">¶</a></h3>
+<ul>
+<li>Crear un nuevo repositorio local y remoto en GitHub.</li>
+<li>Clonar un repositorio remoto en el equipo local.</li>
+<li>Crear una nueva rama y realizar cambios en el código.</li>
+<li>Fusionar una rama con la rama principal (main o master).</li>
+<li>Resolver conflictos de fusión y realizar un commit.</li>
+<li>Etiquetar un commit con un mensaje descriptivo.</li>
+<li>Ignorar archivos y carpetas con un archivo <code>.gitignore</code>.</li>
+<li>Deshacer cambios y revertir a un estado anterior.</li>
+<li>Visualizar el historial de commits y comparar diferencias.</li>
+<li>Enviar cambios al repositorio remoto y descargar cambios desde el repositorio remoto.</li>
+<li>Eliminar ramas obsoletas y limpiar el historial de commits.</li>
+<li>Colaborar con otros desarrolladores y resolver conflictos de manera eficiente.</li>
+<li>Utilizar herramientas y recursos adicionales para mejorar el uso de Git.</li>
+</ul>
+<h2 id="12-conclusiones">12. Conclusiones<a class="headerlink" href="#12-conclusiones" title="Permanent link">¶</a></h2>
+<ul>
+<li>Git es una herramienta poderosa y versátil que permite a los desarrolladores gestionar el control de versiones de sus proyectos de manera eficiente y colaborativa.</li>
+<li>El uso adecuado de ramas, commits, fusiones y etiquetas en Git permite mantener un historial de cambios limpio, organizado y coherente.</li>
+<li>La resolución de conflictos, la comunicación y la colaboración son aspectos fundamentales para el uso efectivo de Git en proyectos de desarrollo de software.</li>
+<li>La documentación oficial, los tutoriales recomendados y las comunidades de soporte son recursos útiles para aprender y mejorar el uso de Git en el desarrollo de proyectos.</li>
+<li>La práctica regular y la realización de ejercicios son fundamentales para adquirir experiencia y habilidades en el uso de Git y mejorar la productividad como desarrollador de software.</li>
+<li>La adopción de buenas prácticas y recomendaciones en el uso de Git permite mantener un flujo de trabajo eficiente, organizado y colaborativo en proyectos de desarrollo de software.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 by K3V1N 117
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="m504 204.6-.7-1.8L433.6 21c-1.4-3.6-3.9-6.6-7.2-8.6-2.4-1.6-5.1-2.5-8-2.8s-5.7.1-8.4 1.1-5.1 2.7-7.1 4.8c-1.9 2.1-3.3 4.7-4.1 7.4l-47 144H161.3l-47.1-144c-.8-2.8-2.2-5.3-4.1-7.4-2-2.1-4.4-3.7-7.1-4.8-2.6-1-5.5-1.4-8.4-1.1s-5.6 1.2-8 2.8c-3.2 2-5.8 5.1-7.2 8.6L9.8 202.8l-.8 1.8c-10 26.2-11.3 55-3.5 82 7.7 26.9 24 50.7 46.4 67.6l.3.2.6.4 106 79.5c38.5 29.1 66.7 50.3 84.6 63.9 3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3c17.9-13.5 46.1-34.9 84.6-63.9l106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gihub.com/KEVIN-117" target="_blank" rel="noopener" title="gihub.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "content.code.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
